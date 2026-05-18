@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We Love Chile — Passeios no Chile para Brasileiros</title>
+  <meta name="description" content="Passeios no Chile para brasileiros. Santiago e Deserto do Atacama com guias que falam português. Preços em reais, PIX e 12x no cartão." />
+
+  <!-- WLC Design System — fonts + tokens -->
+  <link rel="stylesheet" href="../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/colors_and_type.css" />
+
+  <!-- Fallback: Google Fonts (se fontes locais não carregarem) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Fallbacks ─── */
+    :root {
+      --font-sans-fb: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+      --font-display-fb: 'Fredoka One', cursive;
+    }
+    @font-face {
+      font-family: 'Chalkiez';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/Chalkiez-Regular.otf') format('opentype');
+      font-weight: 400; font-style: normal; font-display: swap;
+      unicode-range: U+0020-007E;
+    }
+    /* Chalkiez fallback para acentos PT-BR — usa Chaloops (mesmo estilo chalk) */
+    @font-face {
+      font-family: 'Chalkiez';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/Chaloops-Bd.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+      unicode-range: U+0080-024F, U+1E00-1EFF;
+    }
+    @font-face {
+      font-family: 'Lufga';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/lufga-regular.otf') format('opentype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Lufga';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/lufga-bold.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Lufga';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/lufga-extra-bold.otf') format('opentype');
+      font-weight: 800; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Lufga';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/lufga-black.otf') format('opentype');
+      font-weight: 900; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Lufga';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/lufga-semibold.otf') format('opentype');
+      font-weight: 600; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Lufga';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/lufga-medium.otf') format('opentype');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Lufga';
+      src: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/fonts/lufga-light.otf') format('opentype');
+      font-weight: 300; font-style: normal; font-display: swap;
+    }
+
+    /* ── RESET & BASE ──────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lufga', var(--font-sans-fb);
+      background: var(--wlc-cream, #F3E8D5);
+      color: var(--wlc-ink, #1B1A2A);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ── UTILITIES ─────────────────────────── */
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    .arch { border-radius: 999px 999px 0 0; }
+
+    /* ── NAV ───────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 0;
+      transition: background .35s, padding .35s, box-shadow .35s;
+    }
+    .nav.scrolled {
+      background: var(--wlc-cream, #F3E8D5);
+      padding: 12px 0;
+      box-shadow: 0 2px 16px rgba(27,26,42,.12);
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo img { height: 38px; width: auto; }
+    .nav__logo-text {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 26px; color: var(--wlc-cream, #F3E8D5);
+      transition: color .3s;
+    }
+    .nav.scrolled .nav__logo-text { color: var(--wlc-ink, #1B1A2A); }
+    .nav__links { display: flex; align-items: center; gap: 28px; }
+    .nav__links a {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 14px; font-weight: 700;
+      color: rgba(243,232,213,0.90);
+      transition: color .2s;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav.scrolled .nav__links a { color: var(--wlc-ink, #1B1A2A); }
+    .nav__links a:hover { color: var(--wlc-red, #DB3A3D); border-bottom-color: var(--wlc-red, #DB3A3D); }
+    .nav__cta {
+      background: var(--wlc-red, #DB3A3D);
+      color: var(--wlc-cream, #F3E8D5);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 14px; font-weight: 800;
+      padding: 11px 22px; border-radius: 999px;
+      transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .nav.scrolled .nav__cta { background: var(--wlc-red, #DB3A3D); color: var(--wlc-cream, #F3E8D5); }
+    .nav__cta:hover { background: var(--wlc-red-deep, #B02026); transform: translateY(-1px); }
+    .nav__hamburger { display: none; flex-direction: column; gap: 5px; }
+    .nav__hamburger span { display: block; width: 24px; height: 2px; background: var(--wlc-cream, #F3E8D5); border-radius: 2px; transition: .3s; }
+    .nav.scrolled .nav__hamburger span { background: var(--wlc-ink, #1B1A2A); }
+    .nav__mobile {
+      display: none; position: fixed; inset: 0;
+      background: var(--wlc-red, #DB3A3D); z-index: 99;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .nav__mobile.open { display: flex; }
+    .nav__mobile a {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 36px; color: var(--wlc-cream, #F3E8D5);
+    }
+    .nav__mobile-close {
+      position: absolute; top: 20px; right: 24px;
+      font-size: 32px; color: var(--wlc-cream, #F3E8D5);
+    }
+
+    /* ── HERO PARALLAX ─────────────────────── */
+    .hero {
+      position: relative; height: 100vh; min-height: 600px;
+      overflow: hidden; display: flex; flex-direction: column;
+      justify-content: flex-end;
+    }
+    .hero__scene {
+      position: absolute; inset: -6%;
+      width: 112%; height: 112%;
+      transform: translate(0%, 0%);
+      transition: transform .12s cubic-bezier(.25,.46,.45,.94);
+      will-change: transform;
+    }
+    .hero__layer {
+      position: absolute; inset: 0; opacity: 0;
+      transition: opacity .9s ease; overflow: hidden;
+    }
+    .hero__layer.active { opacity: 1; }
+    .hero__layer::after {
+      content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(to bottom,
+        rgba(27,26,42,.1) 0%, rgba(27,26,42,.2) 40%, rgba(27,26,42,.68) 100%);
+    }
+    .hero__video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero__stamps { display: none; }
+    .hero__content {
+      position: relative; z-index: 3; width: 100%;
+      max-width: 1240px; margin: 0 auto; padding: 0 24px 110px;
+    }
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--wlc-yellow, #F5B71C); color: var(--wlc-ink, #1B1A2A);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .hero__title {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: clamp(72px, 11vw, 118px);
+      line-height: .92; color: var(--wlc-cream, #F3E8D5);
+      margin-bottom: 16px; text-shadow: 0 4px 40px rgba(0,0,0,.35);
+    }
+    .hero__subtitle {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 18px; font-weight: 400; line-height: 1.6;
+      color: rgba(243,232,213,.85); max-width: 480px; margin-bottom: 28px;
+    }
+    .hero__stats { display: flex; gap: 32px; margin-bottom: 36px; flex-wrap: wrap; }
+    .hero__stat-num {
+      font-family: 'Lufga', var(--font-sans-fb); font-size: 26px; font-weight: 800;
+      color: var(--wlc-yellow, #F5B71C); line-height: 1;
+    }
+    .hero__stat-label { font-size: 11px; color: rgba(243,232,213,.6); text-transform: uppercase; letter-spacing: .1em; margin-top: 2px; }
+    .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-yellow {
+      background: var(--wlc-yellow, #F5B71C); color: var(--wlc-ink, #1B1A2A);
+      font-family: 'Lufga', var(--font-sans-fb); font-size: 15px; font-weight: 800;
+      padding: 16px 28px; border-radius: 999px;
+      transition: background .2s, transform .15s, box-shadow .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-yellow:hover { background: var(--wlc-yellow-deep, #D99512); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(27,26,42,.20); }
+    .btn-ghost {
+      color: var(--wlc-cream, #F3E8D5); font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 15px; font-weight: 800; padding: 14px 28px; border-radius: 999px;
+      box-shadow: inset 0 0 0 2px var(--wlc-cream, #F3E8D5);
+      transition: background .2s, box-shadow .2s;
+    }
+    .btn-ghost:hover { background: rgba(243,232,213,.12); }
+    /* Category tabs — Faroe Islands style */
+    .hero__tabs {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 4;
+      display: flex; justify-content: center; align-items: flex-end;
+      padding: 80px 40px 28px;
+      background: linear-gradient(to top, rgba(0,0,0,.52) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .hero__tab {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      padding: 0 32px; cursor: pointer; border: none;
+      background: transparent; color: rgba(255,255,255,.55);
+      transition: color .25s; pointer-events: auto;
+    }
+    .hero__tab:hover { color: rgba(255,255,255,.95); }
+    .hero__tab.active { color: white; }
+    .hero__tab-icon {
+      padding: 10px; transition: background .3s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero__tab.active .hero__tab-icon { background: rgba(0,0,0,.45); }
+    .hero__tab svg {
+      width: 40px; height: 40px; display: block;
+      stroke: currentColor; fill: none; stroke-width: 1.5;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .hero__tab-label {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      display: block; padding-bottom: 3px; border-bottom: 1.5px solid transparent;
+      transition: border-color .25s;
+    }
+    .hero__tab.active .hero__tab-label { border-bottom-color: var(--wlc-yellow, #F5B71C); }
+
+    /* ── HERO INTRO (texto logo abaixo do hero vídeo) ── */
+    .hero-intro {
+      background: var(--wlc-red, #DB3A3D);
+      padding: 72px 0 64px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero-intro::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/assets/pattern-stamps.png');
+      background-size: 280px; opacity: .07; mix-blend-mode: multiply;
+    }
+    .hero-intro__inner { position: relative; z-index: 2; }
+
+    /* ── TRUST BAR ─────────────────────────── */
+    .trust-bar { background: var(--wlc-navy, #1B2A5E); padding: 20px 0; }
+    .trust-bar__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; color: rgba(243,232,213,0.75);
+    }
+    .trust-item strong { color: var(--wlc-cream, #F3E8D5); font-weight: 700; }
+    .trust-divider { width: 1px; height: 28px; background: rgba(243,232,213,0.15); }
+    .stars { color: var(--wlc-yellow, #F5B71C); letter-spacing: 2px; font-size: 14px; }
+
+    /* ── SECTION HEADERS ───────────────────── */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      display: inline-block;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; font-weight: 800; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--wlc-red, #DB3A3D); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 0.95; letter-spacing: -0.01em;
+      color: var(--wlc-ink, #1B1A2A); margin-bottom: 14px;
+    }
+    .section-title.on-dark { color: var(--wlc-cream, #F3E8D5); }
+    .section-subtitle {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 16px; font-weight: 400; line-height: 1.7;
+      color: var(--wlc-ink, #1B1A2A); opacity: 0.65;
+      max-width: 560px; margin: 0 auto;
+    }
+    .section-subtitle.on-dark { color: var(--wlc-cream, #F3E8D5); }
+
+    /* ── MODALIDADES ──────────────────────── */
+    .modalidades {
+      padding: 96px 0;
+      position: relative;
+      background: var(--wlc-cream, #F3E8D5);
+    }
+    .modalidades__bg {
+      position: absolute; inset: 0;
+      background-image: url('van-andes-v2.png');
+      background-size: cover; background-position: center 65%;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .modalidades > .container { position: relative; z-index: 2; }
+    .modalidades__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 820px; margin: 0 auto; }
+    .modalidade-card {
+      background: #fff; border-radius: 16px;
+      overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.08);
+    }
+    .modalidade-card--destaque { border-top: 3px solid var(--wlc-red, #DB3A3D); }
+
+    /* Animação float + hover tilt */
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-8px); }
+    }
+    @keyframes floatCardAlt {
+      0%, 100% { transform: translateY(-8px); }
+      50%       { transform: translateY(0px); }
+    }
+    .modalidade-card {
+      animation: floatCard 4s ease-in-out infinite;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .modalidade-card--destaque {
+      animation: floatCardAlt 4s ease-in-out infinite;
+    }
+    .modalidade-card:hover {
+      animation: none;
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 24px 48px rgba(27,26,42,.18);
+    }
+    .modalidade-card__top {
+      padding: 5px 0; text-align: center;
+      font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .mod--standard { background: #f2f5f8; color: #6b7280; }
+    .mod--privativo { background: var(--wlc-red, #DB3A3D); color: #fff; }
+    .modalidade-card__body { padding: 24px; }
+    .mod-pill {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 3px 10px; border-radius: 999px;
+      background: #f2f5f8; color: #374151; margin-bottom: 12px;
+    }
+    .mod-pill--red { background: var(--wlc-red, #DB3A3D); color: #fff; }
+    .mod-title {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 20px; font-weight: 800; text-transform: uppercase;
+      color: var(--wlc-navy, #1B2A5E); margin-bottom: 16px;
+    }
+    .feat-list { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+    .feat-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13.5px; line-height: 1.5; }
+    .feat-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+    .feat-ok { color: #25D366; }
+    .feat-no { color: #EF4444; }
+    @media (max-width: 600px) { .modalidades__grid { grid-template-columns: 1fr; } }
+
+    /* ── DESTINOS 3D TILT ──────────────────── */
+    .destinos { padding: 96px 0 0; }
+    .destinos__header { text-align: center; margin-bottom: 24px; }
+
+    .destinos__arena {
+      background: var(--wlc-cream, #F3E8D5);
+      padding: 24px 0 72px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .destinos__cards {
+      display: flex; gap: 40px;
+      justify-content: center; align-items: center;
+      perspective: 1000px;
+      flex-wrap: wrap;
+      padding: 20px 40px;
+    }
+
+    .destino-card-3d {
+      position: relative;
+      flex: 0 0 440px; width: 440px; height: 580px;
+      border-radius: 14px; overflow: hidden;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      box-shadow:
+        rgba(0,0,0,0.66) 0 30px 60px 0,
+        inset rgba(0,0,0,0.45) 0 0 0 5px,
+        inset rgba(255,255,255,0.12) 0 0 0 6px;
+      will-change: transform;
+    }
+    .destino-card-3d--santiago {
+      box-shadow:
+        rgba(0,0,0,0.66) 0 30px 60px 0,
+        rgba(219,58,61,0.10) 0 0 60px 0,
+        inset rgba(0,0,0,0.45) 0 0 0 5px,
+        inset rgba(255,255,255,0.12) 0 0 0 6px;
+    }
+    .destino-card-3d--atacama {
+      box-shadow:
+        rgba(0,0,0,0.66) 0 30px 60px 0,
+        rgba(192,85,16,0.10) 0 0 60px 0,
+        inset rgba(0,0,0,0.45) 0 0 0 5px,
+        inset rgba(255,255,255,0.12) 0 0 0 6px;
+    }
+    .destino-card-3d.active.destino-card-3d--santiago {
+      box-shadow:
+        rgba(0,0,0,0.80) 0 50px 100px 0,
+        rgba(219,58,61,0.35) 0 0 80px 0,
+        inset rgba(0,0,0,0.45) 0 0 0 5px,
+        inset rgba(255,255,255,0.12) 0 0 0 6px;
+    }
+    .destino-card-3d.active.destino-card-3d--atacama {
+      box-shadow:
+        rgba(0,0,0,0.80) 0 50px 100px 0,
+        rgba(192,85,16,0.40) 0 0 80px 0,
+        inset rgba(0,0,0,0.45) 0 0 0 5px,
+        inset rgba(255,255,255,0.12) 0 0 0 6px;
+    }
+
+    .destino-card__bg {
+      position: absolute;
+      top: -8%; left: -8%;
+      width: 116%; height: 116%;
+      background-size: cover; background-position: center;
+    }
+
+    .destino-card__overlay {
+      position: absolute; inset: 0;
+      opacity: 0;
+      background: rgba(0,0,0,0.82);
+      transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .destino-card-3d.active .destino-card__overlay { opacity: 1; }
+
+    .destino-card__content {
+      position: relative; z-index: 2;
+      width: 100%; height: 100%;
+      padding: 28px 28px 32px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+
+    .destino-card__tag {
+      display: inline-block;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 10px; font-weight: 800; letter-spacing: 0.20em; text-transform: uppercase;
+      color: rgba(27,26,42,0.55);
+      margin-bottom: 10px; align-self: flex-start;
+    }
+    .destino-card__title {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 44px; line-height: 0.92;
+      color: var(--wlc-cream, #F3E8D5);
+      margin-bottom: 14px;
+      transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .destino-card__desc {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 400; line-height: 1.7;
+      color: rgba(243,232,213,0.82);
+      margin-bottom: 22px;
+      opacity: 0;
+      transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .destino-card-3d.active .destino-card__desc { opacity: 1; }
+
+    .destino-card__link {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--wlc-cream, #F3E8D5); color: var(--wlc-ink, #1B1A2A);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 800;
+      padding: 12px 22px; border-radius: 999px;
+      opacity: 0; align-self: flex-start;
+      transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
+    }
+    .destino-card-3d.active .destino-card__link { opacity: 1; }
+    .destino-card__link:hover { box-shadow: 0 6px 20px rgba(0,0,0,.30); }
+
+    @media (max-width: 768px) {
+      .destinos__cards { gap: 24px; padding: 16px 24px; }
+      .destino-card-3d { flex: 0 0 360px; width: 360px; height: 480px; }
+      .destino-card__desc { opacity: 1; }
+      .destino-card__link { opacity: 1; }
+    }
+    @media (max-width: 480px) {
+      .destino-card-3d { flex: 0 0 calc(100vw - 48px); width: calc(100vw - 48px); }
+    }
+
+        /* ── PASSEIOS ──────────────────────────── */
+    .passeios { padding: 96px 0; background: var(--wlc-white, #FFFDF8); }
+    .passeios__tabs {
+      display: flex; gap: 8px; justify-content: center;
+      margin-bottom: 52px; flex-wrap: wrap;
+    }
+    .passeios__tab {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 14px; font-weight: 700;
+      padding: 10px 24px; border-radius: 999px;
+      color: var(--wlc-ink, #1B1A2A);
+      background: var(--wlc-cream, #F3E8D5);
+      transition: background .2s, color .2s;
+      cursor: pointer;
+    }
+    .passeios__tab.active {
+      background: var(--wlc-red, #DB3A3D);
+      color: var(--wlc-cream, #F3E8D5);
+    }
+    .passeios__panel { display: none; }
+    .passeios__panel.active { display: block; }
+    .passeios__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .tour-card {
+      background: var(--wlc-white, #FFFDF8);
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 2px 16px rgba(27,26,42,.08);
+      transition: box-shadow .25s, transform .25s;
+    }
+    .tour-card:hover { box-shadow: 0 12px 40px rgba(27,26,42,.16); transform: translateY(-4px); }
+    .tour-card__img {
+      aspect-ratio: 16/10; overflow: hidden; position: relative;
+      border-radius: 16px 16px 0 0;
+    }
+    .tour-card__img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s; display: block;
+    }
+    .tour-card:hover .tour-card__img img { transform: scale(1.06); }
+    .tour-card__badge {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--wlc-yellow, #F5B71C); color: var(--wlc-ink, #1B1A2A);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 999px;
+    }
+    .tour-card__badge.destaque { background: var(--wlc-teal-soft, #A5D6D1); }
+    .tour-card__body { padding: 22px 24px 24px; }
+    .tour-card__meta {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;
+    }
+    .tour-card__meta span {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(27,26,42,0.50);
+    }
+    .tour-card__title {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 26px; line-height: 1.05;
+      color: var(--wlc-ink, #1B1A2A); margin-bottom: 8px;
+    }
+    .tour-card__desc {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 400; line-height: 1.65;
+      color: rgba(27,26,42,0.60); margin-bottom: 20px;
+    }
+    .tour-card__footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid rgba(27,26,42,.08); padding-top: 16px;
+    }
+    .tour-card__price-from {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: rgba(27,26,42,.45);
+    }
+    .tour-card__price-val {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 28px; color: var(--wlc-red, #DB3A3D); line-height: 1;
+    }
+    .tour-card__price-val small {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 12px; color: rgba(27,26,42,0.45);
+    }
+    .tour-card__btn {
+      background: var(--wlc-yellow, #F5B71C);
+      color: var(--wlc-ink, #1B1A2A);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 12px; font-weight: 800;
+      padding: 11px 18px; border-radius: 999px;
+      transition: background .2s, transform .15s;
+    }
+    .tour-card__btn:hover { background: var(--wlc-yellow-deep, #D99512); transform: translateY(-1px); }
+    .tour-card__urgency {
+      display: flex; align-items: center; gap: 6px; margin-top: 10px;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; font-weight: 700; color: var(--wlc-coral, #E56E5E);
+    }
+    .tour-card__urgency::before { content: '●'; font-size: 7px; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    /* ── COMO FUNCIONA ─────────────────────── */
+    .como { padding: 96px 0; background: var(--wlc-navy, #1B2A5E); position: relative; overflow: hidden; }
+
+    /* fundo sutil de bolinhas */
+    .como::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(243,232,213,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    .como .section-eyebrow { color: rgba(243,232,213,0.55); }
+    .como .section-title   { color: var(--wlc-cream, #F3E8D5); }
+
+    /* trilho + avião */
+    .como__track {
+      position: relative;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; margin-top: 16px;
+    }
+    .como__track::before {
+      content: '';
+      position: absolute;
+      top: 52px; left: calc(16.66% + 16px); right: calc(16.66% + 16px);
+      height: 2px;
+      background: repeating-linear-gradient(
+        to right,
+        rgba(243,232,213,0.25) 0px,
+        rgba(243,232,213,0.25) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+    }
+
+    /* avião animado */
+    .como__plane {
+      position: absolute;
+      top: 36px; left: calc(16.66% + 12px);
+      font-size: 22px;
+      transform: scaleX(-1);
+      animation: flyAcross 3.5s cubic-bezier(0.4,0,0.6,1) infinite;
+      pointer-events: none; z-index: 2;
+    }
+    @keyframes flyAcross {
+      0%   { left: calc(16.66% + 12px); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { left: calc(83.33% - 36px); opacity: 0; }
+    }
+
+    /* cards de passo */
+    .como__step {
+      text-align: center; padding: 0 24px 0;
+      cursor: default;
+    }
+
+    .como__badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 72px; height: 72px;
+      background: rgba(243,232,213,0.08);
+      border: 2px solid rgba(243,232,213,0.15);
+      border-radius: 999px;
+      font-size: 28px; margin: 0 auto 20px;
+      transition: background .35s, border-color .35s, transform .35s;
+      position: relative; z-index: 3;
+    }
+    .como__step:hover .como__badge {
+      background: var(--wlc-red, #DB3A3D);
+      border-color: var(--wlc-red, #DB3A3D);
+      transform: scale(1.15) rotate(-6deg);
+    }
+
+    .como__num {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 11px; font-weight: 800; letter-spacing: .18em;
+      color: rgba(243,232,213,0.35);
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+
+    .como__title {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 28px; color: var(--wlc-cream, #F3E8D5);
+      margin-bottom: 12px; line-height: 1.1;
+      transition: color .3s;
+    }
+    .como__step:hover .como__title { color: var(--wlc-yellow, #F5B71C); }
+
+    .como__desc {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 14px; font-weight: 400; line-height: 1.75;
+      color: rgba(243,232,213,0.55);
+      transition: color .3s;
+    }
+    .como__step:hover .como__desc { color: rgba(243,232,213,0.80); }
+
+    /* linha divisória vertical entre steps */
+    .como__step:not(:last-child) {
+      border-right: 1px solid rgba(27,26,42,0.08);
+    }
+
+    /* entrada escalonada */
+    .como__step { opacity: 0; transform: translateY(32px); transition: opacity .6s ease, transform .6s ease; }
+    .como__step.visible { opacity: 1; transform: translateY(0); }
+    .como__step:nth-child(2) { transition-delay: .15s; }
+    .como__step:nth-child(3) { transition-delay: .30s; }
+
+    @media (max-width: 768px) {
+      .como__track { grid-template-columns: 1fr; gap: 40px; }
+      .como__track::before { display: none; }
+      .como__plane { display: none; }
+      .como__step { border-right: none; border-bottom: 1px solid rgba(243,232,213,0.08); padding: 0 0 32px; }
+      .como__step:last-child { border-bottom: none; }
+    }
+
+    /* ── PAYMENT STRIP ─────────────────────── */
+    .payment-strip {
+      background: var(--wlc-cream, #F3E8D5);
+      padding: 64px 0;
+      position: relative; overflow: hidden;
+    }
+    /* shimmer de fundo */
+    .payment-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg,
+        transparent 30%,
+        rgba(219,58,61,0.04) 50%,
+        transparent 70%);
+      animation: shimmerBg 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes shimmerBg {
+      0%,100% { transform: translateX(-60%); }
+      50%      { transform: translateX(60%); }
+    }
+
+    .payment-strip__inner {
+      display: flex; align-items: stretch; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+      position: relative; z-index: 2;
+    }
+
+    .payment-item {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center;
+      gap: 12px; padding: 20px 36px;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 400;
+      color: rgba(27,26,42,0.55);
+      border-right: 1px solid rgba(27,26,42,0.08);
+      cursor: default;
+      transition: background .3s;
+      position: relative;
+    }
+    .payment-item:last-child { border-right: none; }
+    .payment-item:hover { background: rgba(27,26,42,0.04); }
+
+    /* brilho amarelo na base ao hover */
+    .payment-item::after {
+      content: '';
+      position: absolute; bottom: 0; left: 20%; right: 20%;
+      height: 2px; border-radius: 2px;
+      background: var(--wlc-red, #DB3A3D);
+      transform: scaleX(0);
+      transition: transform .35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .payment-item:hover::after { transform: scaleX(1); }
+
+    .payment-item__icon {
+      width: 52px; height: 52px;
+      background: rgba(27,26,42,0.06);
+      border: 1.5px solid rgba(27,26,42,0.10);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      transition: background .3s, border-color .3s, transform .35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .payment-item:hover .payment-item__icon {
+      background: rgba(219,58,61,0.08);
+      border-color: rgba(219,58,61,0.30);
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    .payment-item strong {
+      display: block; font-size: 15px; font-weight: 700;
+      color: var(--wlc-ink, #1B1A2A);
+      transition: color .3s;
+    }
+    .payment-item:hover strong { color: var(--wlc-red, #DB3A3D); }
+
+    /* entrada escalonada */
+    .payment-item {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .5s ease, transform .5s ease,
+                  background .3s;
+    }
+    .payment-item.visible { opacity: 1; transform: translateY(0); }
+    .payment-item:nth-child(1) { transition-delay: .05s; }
+    .payment-item:nth-child(2) { transition-delay: .15s; }
+    .payment-item:nth-child(3) { transition-delay: .25s; }
+    .payment-item:nth-child(4) { transition-delay: .35s; }
+
+    @media (max-width: 768px) {
+      .payment-item { border-right: none; border-bottom: 1px solid rgba(27,26,42,0.08); width: 100%; flex-direction: row; text-align: left; }
+      .payment-item:last-child { border-bottom: none; }
+    }
+
+    /* ── DEPOIMENTOS ───────────────────────── */
+    .depoimentos { padding: 96px 0; background: var(--wlc-red, #DB3A3D); position: relative; overflow: hidden; }
+    .depoimentos__stamps {
+      position: absolute; inset: 0;
+      background-image: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/assets/pattern-stamps.png');
+      background-size: cover; opacity: 0.10; mix-blend-mode: multiply; pointer-events: none;
+    }
+    .depoimentos > .container { position: relative; z-index: 2; }
+    .depoimentos .section-eyebrow { color: rgba(243,232,213,0.70); }
+
+    /* masonry via column-count */
+    .depoimentos__grid {
+      column-count: 3;
+      column-gap: 1rem;
+    }
+    .depoimentos__grid .depo-wrap {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      opacity: 0; /* JS anima via Web Animations API */
+    }
+
+    /* image-first card — igual à referência */
+    .depo-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* dark gradient overlay */
+    .depo-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.45) 0%,
+        rgba(0,0,0,0.10) 40%,
+        rgba(0,0,0,0.10) 55%,
+        rgba(0,0,0,0.75) 100%
+      );
+      border-radius: inherit;
+      pointer-events: none;
+    }
+    .depo-card__header {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px;
+    }
+    .depo-card__body {
+      position: relative; z-index: 2;
+      padding: 16px;
+    }
+    .depo__avatar {
+      width: 40px; height: 40px; border-radius: 999px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 14px; font-weight: 700;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .depo__name {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 700;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+    .depo__origin {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 1px;
+    }
+    .depo__text {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 14px; font-weight: 600; line-height: 1.5;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      margin-bottom: 8px;
+    }
+    .depo__stars { color: var(--wlc-yellow, #F5B71C); font-size: 11px; }
+
+    .depoimentos__cta { text-align: center; margin-top: 44px; }
+    .depoimentos__google {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(243,232,213,0.15); border: 1.5px solid rgba(243,232,213,0.35);
+      color: var(--wlc-cream, #F3E8D5);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 700;
+      padding: 12px 24px; border-radius: 999px;
+      transition: background .2s;
+    }
+    .depoimentos__google:hover { background: rgba(243,232,213,0.25); }
+
+    /* ── FAQ ───────────────────────────────── */
+    .faq { padding: 96px 0; }
+    .faq__grid { max-width: 760px; margin: 0 auto; }
+    .faq__item { border-bottom: 1.5px solid rgba(27,26,42,0.10); }
+    .faq__question {
+      width: 100%; text-align: left; padding: 22px 0;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 17px; font-weight: 700;
+      color: var(--wlc-ink, #1B1A2A); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      transition: color .2s;
+    }
+    .faq__question:hover { color: var(--wlc-red, #DB3A3D); }
+    .faq__chevron {
+      width: 26px; height: 26px; border-radius: 999px;
+      background: var(--wlc-cream, #F3E8D5);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform .3s, background .2s;
+    }
+    .faq__item.open .faq__chevron { transform: rotate(180deg); background: var(--wlc-red, #DB3A3D); }
+    .faq__item.open .faq__chevron svg path { stroke: var(--wlc-cream, #F3E8D5); }
+    .faq__answer {
+      max-height: 0; overflow: hidden;
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 15px; font-weight: 400; line-height: 1.75;
+      color: rgba(27,26,42,0.65);
+      transition: max-height .4s ease, padding .4s;
+    }
+    .faq__item.open .faq__answer { max-height: 300px; padding-bottom: 22px; }
+
+    /* ── SOBRE ─────────────────────────────── */
+    .sobre { padding: 96px 0; background: var(--wlc-navy, #1B2A5E); }
+    .sobre__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .sobre .section-eyebrow { color: rgba(243,232,213,0.55); }
+    .sobre .section-title { color: var(--wlc-cream, #F3E8D5); text-align: left; margin-bottom: 16px; }
+    .sobre .section-subtitle { color: rgba(243,232,213,0.70); text-align: left; margin: 0; }
+    .sobre__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+    .sobre__stat-val {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 52px; color: var(--wlc-yellow, #F5B71C); line-height: 1; margin-bottom: 4px;
+    }
+    .sobre__stat-label {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 12px; font-weight: 500;
+      color: rgba(243,232,213,0.55); text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .sobre__guias { display: flex; flex-direction: column; gap: 16px; }
+    .sobre__guias-title {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 28px; color: var(--wlc-cream, #F3E8D5); margin-bottom: 8px;
+    }
+    .guia-card {
+      background: rgba(243,232,213,0.06); border: 1px solid rgba(243,232,213,0.12);
+      border-radius: 14px; padding: 18px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .guia-card__avatar { width: 52px; height: 52px; border-radius: 999px; overflow: hidden; background: rgba(243,232,213,0.15); flex-shrink: 0; }
+    .guia-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .guia-card__name {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 14px; font-weight: 700; color: var(--wlc-cream, #F3E8D5);
+    }
+    .guia-card__role {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 12px; color: rgba(243,232,213,0.55); margin-top: 2px;
+    }
+    .guia-card__langs { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+    .guia-card__lang {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 999px;
+      background: rgba(243,232,213,0.12); color: rgba(243,232,213,0.65);
+    }
+
+    /* ── CERTS ─────────────────────────────── */
+    .certs { padding: 36px 0; background: var(--wlc-white, #FFFDF8); border-top: 1px solid rgba(27,26,42,.08); }
+    .certs__inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .cert-item { display: flex; align-items: center; gap: 10px; }
+    .cert-item__icon {
+      width: 38px; height: 38px; background: var(--wlc-cream, #F3E8D5);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+    }
+    .cert-item strong {
+      display: block; font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 700; color: var(--wlc-ink, #1B1A2A);
+    }
+    .cert-item span {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; color: rgba(27,26,42,0.50);
+    }
+
+    /* ── CTA FINAL ─────────────────────────── */
+    .cta-final {
+      padding: 96px 0;
+      background: var(--wlc-yellow, #F5B71C);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-final__stamps {
+      position: absolute; inset: 0;
+      background-image: url('../../../../Cross-marca/recursos/Design%20Systems/We%20Love%20Chile%20Design%20System/assets/pattern-stamps.png');
+      background-size: cover; opacity: 0.08; mix-blend-mode: multiply; pointer-events: none;
+    }
+    .cta-final > .container { position: relative; z-index: 2; }
+    .cta-final .section-eyebrow { color: rgba(27,26,42,0.55); }
+    .cta-final .section-title { color: var(--wlc-ink, #1B1A2A); }
+    .cta-final .section-subtitle { color: rgba(27,26,42,0.65); }
+    .cta-final__actions { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+    .btn-red {
+      background: var(--wlc-red, #DB3A3D); color: var(--wlc-cream, #F3E8D5);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 15px; font-weight: 800;
+      padding: 16px 30px; border-radius: 999px;
+      transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-red:hover { background: var(--wlc-red-deep, #B02026); transform: translateY(-2px); }
+    .btn-dark {
+      background: var(--wlc-ink, #1B1A2A); color: var(--wlc-cream, #F3E8D5);
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 15px; font-weight: 800;
+      padding: 16px 30px; border-radius: 999px;
+      transition: background .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-dark:hover { background: #2E2B3F; }
+
+    /* ── FOOTER ────────────────────────────── */
+    .footer { background: var(--wlc-ink, #1B1A2A); color: rgba(243,232,213,0.55); padding: 64px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer__brand-logo { margin-bottom: 14px; }
+    .footer__brand-logo span {
+      font-family: 'Chalkiez', var(--font-display-fb);
+      font-size: 28px; color: var(--wlc-cream, #F3E8D5);
+    }
+    .footer__brand p {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; line-height: 1.7; max-width: 260px;
+    }
+    .footer__col-title {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--wlc-cream, #F3E8D5); margin-bottom: 18px;
+    }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer__links a {
+      font-family: 'Lufga', var(--font-sans-fb);
+      font-size: 13px; font-weight: 400; color: rgba(243,232,213,0.50); transition: color .2s;
+    }
+    .footer__links a:hover { color: var(--wlc-cream, #F3E8D5); }
+    .footer__bottom {
+      border-top: 1px solid rgba(243,232,213,0.08); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+      font-family: 'Lufga', var(--font-sans-fb); font-size: 12px;
+    }
+    .footer__socials { display: flex; gap: 12px; }
+    .footer__social {
+      width: 34px; height: 34px; border: 1px solid rgba(243,232,213,0.15);
+      border-radius: 999px; display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: rgba(243,232,213,0.45); transition: color .2s, border-color .2s;
+    }
+    .footer__social:hover { color: var(--wlc-cream, #F3E8D5); border-color: rgba(243,232,213,0.45); }
+
+    /* ── ANIMATIONS ────────────────────────── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: .1s; }
+    .fade-up:nth-child(3) { transition-delay: .2s; }
+
+    /* ── RESPONSIVE ────────────────────────── */
+    @media (max-width: 1024px) {
+      .passeios__grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav__links, .nav__cta { display: none; }
+      .nav__hamburger { display: flex; }
+      .hero__title { font-size: 64px; }
+      .destinos__grid { grid-template-columns: 1fr; }
+      .destino-card { aspect-ratio: 3/2; }
+      .passeios__grid { grid-template-columns: 1fr; }
+      .como__grid { grid-template-columns: 1fr; gap: 36px; }
+      .depoimentos__grid { column-count: 1; }
+      .sobre__inner { grid-template-columns: 1fr; gap: 48px; }
+      .trust-bar__inner { justify-content: center; }
+      .trust-divider { display: none; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+      .payment-strip__inner { gap: 24px; }
+    }
+    @media (max-width: 480px) {
+      .hero__title { font-size: 52px; }
+      .hero__actions { flex-direction: column; align-items: center; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; text-align: center; }
+      .cta-final__actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-text">We Love Chile</span>
+      </a>
+      <div class="nav__links">
+        <a href="#passeios">Passeios</a>
+        <a href="#santiago">Santiago</a>
+        <a href="#atacama">Atacama</a>
+        <a href="#sobre">A gente</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/5511999999999" class="nav__cta">Reservar →</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobileMenu">
+  <button class="nav__mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#passeios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Passeios</a>
+  <a href="#santiago" onclick="document.getElementById('mobileMenu').classList.remove('open')">Santiago</a>
+  <a href="#atacama" onclick="document.getElementById('mobileMenu').classList.remove('open')">Atacama</a>
+  <a href="#sobre" onclick="document.getElementById('mobileMenu').classList.remove('open')">A gente</a>
+  <a href="#faq" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+  <a href="https://wa.me/5511999999999" class="btn-yellow" style="font-size:16px;padding:14px 32px;margin-top:8px">Reservar →</a>
+</div>
+
+<!-- ═══ HERO ════════════════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <!-- Scene: inclina com o mouse -->
+  <div class="hero__scene" id="heroScene">
+    <div class="hero__layer active" data-cat="santiago">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/14060349/14060349-hd_1920_1080_60fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__layer" data-cat="atacama">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/33655180/14300588_2560_1440_60fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__layer" data-cat="andes">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/33665914/14303744_1920_1080_59fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__layer" data-cat="vinicolas">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/4820996/4820996-hd_1920_1080_30fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__layer" data-cat="neve">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/35689466/15125776_1920_1080_60fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__stamps"></div>
+  </div>
+
+  <!-- Tabs Faroe-style: só ícone SVG + label, sem texto no hero -->
+  <div class="hero__tabs" id="heroTabs">
+
+    <!-- Santiago — skyline cidade -->
+    <button class="hero__tab active" data-cat="santiago" onclick="switchCat('santiago')">
+      <span class="hero__tab-icon">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="2,36 2,22 10,22 10,14 16,14 16,8 24,8 24,14 30,14 30,22 38,22 38,36"/>
+          <line x1="2" y1="36" x2="38" y2="36"/>
+          <rect x="17" y="12" width="6" height="4"/>
+        </svg>
+      </span>
+      <span class="hero__tab-label">Santiago</span>
+    </button>
+
+    <!-- Atacama — sol com raios -->
+    <button class="hero__tab" data-cat="atacama" onclick="switchCat('atacama')">
+      <span class="hero__tab-icon">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="7"/>
+          <line x1="20" y1="4" x2="20" y2="9"/>
+          <line x1="20" y1="31" x2="20" y2="36"/>
+          <line x1="4" y1="20" x2="9" y2="20"/>
+          <line x1="31" y1="20" x2="36" y2="20"/>
+          <line x1="8.4" y1="8.4" x2="12" y2="12"/>
+          <line x1="28" y1="28" x2="31.6" y2="31.6"/>
+          <line x1="31.6" y1="8.4" x2="28" y2="12"/>
+          <line x1="12" y1="28" x2="8.4" y2="31.6"/>
+        </svg>
+      </span>
+      <span class="hero__tab-label">Atacama</span>
+    </button>
+
+    <!-- Andes — duas montanhas sobrepostas -->
+    <button class="hero__tab" data-cat="andes" onclick="switchCat('andes')">
+      <span class="hero__tab-icon">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="2,35 15,8 28,35"/>
+          <polyline points="18,35 28,16 38,35"/>
+          <line x1="2" y1="35" x2="38" y2="35"/>
+          <polyline points="11,22 15,17 19,22"/>
+        </svg>
+      </span>
+      <span class="hero__tab-label">Andes</span>
+    </button>
+
+    <!-- Vinícolas — taça de vinho -->
+    <button class="hero__tab" data-cat="vinicolas" onclick="switchCat('vinicolas')">
+      <span class="hero__tab-icon">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11,5 L29,5 L27,16 Q27,25 20,25 Q13,25 13,16 Z"/>
+          <line x1="20" y1="25" x2="20" y2="34"/>
+          <line x1="13" y1="34" x2="27" y2="34"/>
+        </svg>
+      </span>
+      <span class="hero__tab-label">Vinícolas</span>
+    </button>
+
+    <!-- Neve — floco de neve -->
+    <button class="hero__tab" data-cat="neve" onclick="switchCat('neve')">
+      <span class="hero__tab-icon">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="4" x2="20" y2="36"/>
+          <line x1="4" y1="20" x2="36" y2="20"/>
+          <line x1="8.7" y1="8.7" x2="31.3" y2="31.3"/>
+          <line x1="31.3" y1="8.7" x2="8.7" y2="31.3"/>
+          <polyline points="16,10 20,14 24,10"/>
+          <polyline points="16,30 20,26 24,30"/>
+          <polyline points="10,16 14,20 10,24"/>
+          <polyline points="30,16 26,20 30,24"/>
+        </svg>
+      </span>
+      <span class="hero__tab-label">Neve</span>
+    </button>
+
+  </div>
+</section>
+<!-- ═══ HERO INTRO ══════════════════════════════════════════════════════ -->
+<section class="hero-intro" id="home-intro">
+  <div class="hero-intro__inner container" style="max-width:860px;margin:0 auto;padding:0 24px;">
+    <div class="hero__badge" style="margin-bottom:20px;">📍 Receptivo brasileiro no Chile · desde 2019</div>
+    <h2 style="font-family:'Chalkiez',var(--font-display-fb);font-size:clamp(48px,7vw,84px);line-height:.95;color:var(--wlc-cream,#F3E8D5);margin-bottom:20px;">
+      Vem pro Chile com a gente.
+    </h2>
+    <p style="font-family:'Lufga',var(--font-sans-fb);font-size:18px;line-height:1.6;color:rgba(243,232,213,.85);max-width:560px;margin:0 auto 32px;">
+      A maior operadora de passeios do Chile para brasileiros. Guias que falam português de verdade — a gente cuida de tudo.
+    </p>
+    <div class="hero__stats" style="justify-content:center;margin-bottom:36px;">
+      <div class="hero__stat">
+        <div class="hero__stat-num">500K+</div>
+        <div class="hero__stat-label">We Lovers</div>
+      </div>
+      <div class="hero__stat">
+        <div class="hero__stat-num">4.9★</div>
+        <div class="hero__stat-label">Google</div>
+      </div>
+      <div class="hero__stat">
+        <div class="hero__stat-num">30+</div>
+        <div class="hero__stat-label">Passeios</div>
+      </div>
+    </div>
+    <div class="hero__actions" style="justify-content:center;">
+      <a href="#passeios" class="btn-yellow">Ver passeios →</a>
+      <a href="https://wa.me/5511999999999" class="btn-ghost" style="color:var(--wlc-cream,#F3E8D5);box-shadow:inset 0 0 0 2px rgba(243,232,213,.6);">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+<!-- ═══ TRUST BAR ══════════════════════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar__inner">
+      <div class="trust-item">
+        <span class="stars">★★★★★</span>
+        <div><strong>4,9 no Google</strong> +1.200 avaliações</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span>🇧🇷</span>
+        <div><strong>15.000+ brasileiros</strong> atendidos</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span>💬</span>
+        <div><strong>Guias em português</strong> 100% do passeio</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span>🏛️</span>
+        <div><strong>SERNATUR + CNPJ</strong> empresa regularizada</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span>💳</span>
+        <div><strong>PIX · Wise · 12×</strong> pague em reais</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ═══ DESTINOS ════════════════════════════════════════════════════════ -->
+<section class="destinos" id="destinos">
+  <div class="container destinos__header">
+    <span class="section-eyebrow">Onde você quer ir?</span>
+    <h2 class="section-title">Dois destinos inesquecíveis</h2>
+    <p class="section-subtitle">De metrópole vibrante a deserto de outro mundo — escolha sua aventura ou faz as duas.</p>
+  </div>
+
+  <div class="destinos__arena">
+    <div class="destinos__cards">
+
+      <!-- SANTIAGO -->
+      <div class="destino-card-3d destino-card-3d--santiago" id="santiago">
+        <div class="destino-card__bg" style="background-image: url('../../../recursos/Banco%20de%20Imagens%20%E2%80%94%20Chile/Santiago/horizontal/santiago-paisagem-01.jpg')"></div>
+        <div class="destino-card__overlay"></div>
+        <div class="destino-card__content">
+          <span class="destino-card__tag">Santiago · Chile</span>
+          <h3 class="destino-card__title">A capital que surpreende</h3>
+          <p class="destino-card__desc">Vinícolas premiadas, bairros históricos, culinária de nível e a Cordilheira ao fundo. A gente te mostra o melhor de Santiago.</p>
+          <a href="#passeios" class="destino-card__link">Ver passeios →</a>
+        </div>
+      </div>
+
+      <!-- ATACAMA -->
+      <div class="destino-card-3d destino-card-3d--atacama" id="atacama">
+        <div class="destino-card__bg" style="background-image: url('../../../recursos/Banco%20de%20Imagens%20%E2%80%94%20Chile/Atacama/horizontal/atacama-paisagem-01.jpg')"></div>
+        <div class="destino-card__overlay"></div>
+        <div class="destino-card__content">
+          <span class="destino-card__tag">Deserto do Atacama · Chile</span>
+          <h3 class="destino-card__title">O deserto mais bonito do mundo</h3>
+          <p class="destino-card__desc">Geisers ao nascer do sol, flamingos, lagoas azuis e o céu estrelado mais lindo que você vai ver na vida.</p>
+          <a href="#passeios" class="destino-card__link">Ver passeios →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══ PASSEIOS ════════════════════════════════════════════════════════ -->
+<section class="passeios" id="passeios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">O que fazer</span>
+      <h2 class="section-title">Escolha seu passeio</h2>
+      <p class="section-subtitle">Todos com guia em português, preço em BRL e reserva em menos de 10 minutos.</p>
+    </div>
+    <div class="passeios__tabs">
+      <button class="passeios__tab active" onclick="switchTab('santiago-tab', this)">📍 Santiago</button>
+      <button class="passeios__tab" onclick="switchTab('atacama-tab', this)">🌵 Atacama</button>
+      <button class="passeios__tab" onclick="switchTab('cordilheira-tab', this)">⛰️ Cordilheira</button>
+      <button class="passeios__tab" onclick="switchTab('vinicolas-tab', this)">🍷 Vinícolas</button>
+    </div>
+
+    <!-- SANTIAGO -->
+    <div class="passeios__panel active" id="santiago-tab">
+      <div class="passeios__grid">
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/santiago-lovers/city-tour.webp" alt="City Tour Santiago a Pé" loading="lazy" />
+            <span class="tour-card__badge">Mais vendido</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🚶 A pé</span><span>🗓️ Todo dia</span></div>
+            <h3 class="tour-card__title">City Tour Santiago a Pé</h3>
+            <p class="tour-card__desc">Plaza de Armas, Cerro Santa Lucía, La Moneda e os bairros mais charmosos de Santiago com histórias reais em português.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/santiago-lovers/city-tour" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+            <p class="tour-card__urgency">Últimas vagas esta semana</p>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/litoral-lovers/valparaiso-vina-del-mar.webp" alt="Valparaíso e Viña del Mar" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🌊 Litoral</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Valparaíso & Viña del Mar</h3>
+            <p class="tour-card__desc">O porto boêmio de street art e a cidade jardim do Pacífico no mesmo dia. Dois destinos imperdíveis saindo de Santiago.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/litoral-lovers/valparaiso-vina-del-mar" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/santiago-lovers/amor-e-pasta.webp" alt="Amor e Pasta jantar Santiago" loading="lazy" />
+            <span class="tour-card__badge destaque">Favorito</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🍝 Gastronômico</span><span>🗓️ Noturno</span></div>
+            <h3 class="tour-card__title">Amor e Pasta</h3>
+            <p class="tour-card__desc">Jantar italiano no coração de Santiago com as melhores massas artesanais da cidade. Uma noite para não esquecer.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/santiago-lovers/amor-e-pasta" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/litoral-lovers/isla-negra-algarrobo.webp" alt="Isla Negra Algarrobo e Undurraga" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🌊 Litoral</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Isla Negra, Algarrobo & Undurraga</h3>
+            <p class="tour-card__desc">A casa de Pablo Neruda à beira-mar, a praia de Algarrobo e degustação na vinícola Undurraga — um trio inesquecível.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/litoral-lovers/isla-negra-algarrobo" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/adventure-lovers/rafting.webp" alt="Rafting no Chile" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🌊 Aventura</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Rafting</h3>
+            <p class="tour-card__desc">Descida de corredeiras nos rios gelados que descem dos Andes com instrutores certificados. Adrenalina de verdade.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/adventure-lovers/rafting" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/adventure-lovers/parque-safari.webp" alt="Parque Safari Chile" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🦁 Safari</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Parque Safari</h3>
+            <p class="tour-card__desc">O único safari da América do Sul com leões, girafas e zebras soltos no savana chileno. Inacreditável que existe isso aqui!</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/adventure-lovers/parque-safari" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATACAMA -->
+    <div class="passeios__panel" id="atacama-tab">
+      <div class="passeios__grid">
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/atacama/half-day/geysers-fundo.webp" alt="Geysers del Tatio" loading="lazy" />
+            <span class="tour-card__badge">Mais vendido</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Madrugada</span><span>🌋 Geisers</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Geysers del Tatio</h3>
+            <p class="tour-card__desc">80+ geisers expelindo vapor a 86°C ao nascer do sol, a 4.200m de altitude. Um dos espetáculos mais surreais da natureza.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/geysers" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+            <p class="tour-card__urgency">Últimas vagas</p>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/atacama/half-day/valle-de-la-luna-fundo.webp" alt="Valle de la Luna pôr do sol" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🌅 Pôr do sol</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Valle de la Luna</h3>
+            <p class="tour-card__desc">Paisagem de outro planeta ao entardecer. Dunas, formações de sal e o céu cor de laranja fazem deste passeio puro cinema.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/valle-de-la-luna" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/atacama/half-day/laguna-cejar-fundo.webp" alt="Laguna Cejar banho flutuante" loading="lazy" />
+            <span class="tour-card__badge destaque">Favorito</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🏊 Banho</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Laguna Cejar</h3>
+            <p class="tour-card__desc">Lagoa de sal no deserto onde você flutua sem fazer esforço — mais salgada que o Mar Morto. Experiência única no mundo.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/laguna-cejar" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/atacama/half-day/vallecito-fundo.webp" alt="Vallecito Magic Bus" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🚌 Ônibus mágico</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Vallecito Magic Bus</h3>
+            <p class="tour-card__desc">O ônibus que sobe sozinho morro abaixo — ilusão de ótica do Atacama que vai deixar toda a família de boca aberta.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/vallecito" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/atacama/full-day/piedras-rojas-fundo.webp" alt="Piedras Rojas altitude" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Full Day</span><span>⛰️ 4.000m</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Piedras Rojas</h3>
+            <p class="tour-card__desc">Rochas vermelhas refletidas em lagoas de um azul impossível a 4.000m de altitude. A foto mais linda que você vai tirar na vida.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/full-day/piedras-rojas" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/atacama/full-day/rota-dos-salares-fundo.webp" alt="Rota dos Salares altiplano" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Full Day</span><span>🏔️ 4.800m</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Rota dos Salares</h3>
+            <p class="tour-card__desc">O altiplano mais isolado do Chile com salares brancos, flamingos e paisagens que parecem outro planeta — a 4.800m de altitude.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/full-day/rota-dos-salares" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORDILHEIRA -->
+    <div class="passeios__panel" id="cordilheira-tab">
+      <div class="passeios__grid">
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/farellones.webp" alt="Farellones neve Cordilheira" loading="lazy" />
+            <span class="tour-card__badge">Mais vendido</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 10 horas</span><span>❄️ 2.500m</span><span>🗓️ Jun–Set</span></div>
+            <h3 class="tour-card__title">Farellones & Neve</h3>
+            <p class="tour-card__desc">Ver neve de perto a 2.500m com vista para Santiago lá embaixo. O passeio favorito das famílias brasileiras no inverno chileno.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/farellones" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+            <p class="tour-card__urgency">Alta demanda em julho</p>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/valle-nevado.webp" alt="Valle Nevado maior resort América do Sul" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>⛷️ Resort</span><span>🗓️ Jun–Set</span></div>
+            <h3 class="tour-card__title">Valle Nevado</h3>
+            <p class="tour-card__desc">O maior resort de ski da América do Sul. Neve garantida, pistas para todos os níveis e a melhor estrutura dos Andes.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/valle-nevado" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/el-colorado.webp" alt="El Colorado 3333m" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🏔️ 3.333m</span><span>🗓️ Jun–Set</span></div>
+            <h3 class="tour-card__title">El Colorado</h3>
+            <p class="tour-card__desc">Resort histórico a 3.333m com pistas de ski e snowboard e vista panorâmica de 360° para a Cordilheira dos Andes.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/el-colorado" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/portillo.webp" alt="Portillo ski resort exclusivo" loading="lazy" />
+            <span class="tour-card__badge destaque">Exclusivo</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>⛷️ Clássico</span><span>🗓️ Jun–Set</span></div>
+            <h3 class="tour-card__title">Portillo</h3>
+            <p class="tour-card__desc">O resort mais icônico dos Andes, palco de campeonatos mundiais. Neve técnica, hotel histórico e paisagem de cinema.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/portillo" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/termas-summer.webp" alt="Termas Cordilheira verão" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>♨️ Verão</span><span>🗓️ Out–Mar</span></div>
+            <h3 class="tour-card__title">Termas de Verão</h3>
+            <p class="tour-card__desc">Piscinas termais naturais no meio da Cordilheira sem neve — a Cordilheira no verão é outro mundo, verde e quente.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/termas-summer" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/valle-experience.webp" alt="Valle Experience Cordilheira" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🏔️ Andino</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Valle Experience</h3>
+            <p class="tour-card__desc">Trilha guiada pelos vales andinos com parada para almoço típico e tirolesa sobre o Rio Maipo. Natureza pura.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/valle-experience" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VINÍCOLAS -->
+    <div class="passeios__panel" id="vinicolas-tab">
+      <div class="passeios__grid">
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/cata-sensorial.webp" alt="Cata Sensorial vinhos chilenos" loading="lazy" />
+            <span class="tour-card__badge">Mais vendido</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🍷 Cata</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Cata Sensorial</h3>
+            <p class="tour-card__desc">Aprenda a degustar vinhos chilenos com sommelier brasileiro. Do Carménère ao Syrah — uma aula deliciosa sobre a alma do Chile.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/wine-lovers/cata-sensorial" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/concha-toro-normal.webp" alt="Concha e Toro vinícola Santiago" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🏰 Concha & Toro</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Concha & Toro</h3>
+            <p class="tour-card__desc">A vinícola mais famosa do mundo. Caves históricas, parque centenário, lenda de Don Melchor e degustação dos rótulos clássicos.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/wine-lovers/concha-toro-normal" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/concha-toro-marques.webp" alt="Concha e Toro Marquês de Casa Concha" loading="lazy" />
+            <span class="tour-card__badge destaque">Premium</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🥂 Premium</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Concha & Toro Marquês</h3>
+            <p class="tour-card__desc">Tour exclusivo com degustação da linha Marquês de Casa Concha — os vinhos que representam o Chile no mundo todo.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/wine-lovers/concha-toro-marques" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/concha-toro-noturno.webp" alt="Concha e Toro tour noturno" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Noturno</span><span>🌙 Caves iluminadas</span><span>🗓️ Qui e Sex</span></div>
+            <h3 class="tour-card__title">Concha & Toro Noturno</h3>
+            <p class="tour-card__desc">Caves iluminadas com velas, vinhos exclusivos e a magia da vinícola à noite. O passeio romântico favorito dos casais.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/wine-lovers/concha-toro-noturno" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/cousino-macul.webp" alt="Cousiño Macul vinícola histórica" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🏛️ Histórica</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Cousiño Macul</h3>
+            <p class="tour-card__desc">A vinícola mais antiga do Chile, fundada em 1856, dentro da cidade de Santiago. História, elegância e vinhos de classe mundial.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/wine-lovers/cousino-macul" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/santa-rita.webp" alt="Santa Rita vinícola e museu" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🎨 Museu + Vinho</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Santa Rita</h3>
+            <p class="tour-card__desc">Vinícola secular com museu de arte pré-colombiana e jardins históricos. Uma imersão completa na cultura e no vinho chileno.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/wine-lovers/santa-rita" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ═══ MODALIDADES ══════════════════════════════════════════════════════ -->
+<section class="modalidades">
+  <div class="modalidades__bg"></div>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Modalidades</span>
+      <h2 class="section-title">Standard ou Privativo?</h2>
+      <p class="section-subtitle">Qual deles você escolhe para a sua viagem? Te explicamos agora, We Lover!</p>
+    </div>
+    <div class="modalidades__grid">
+      <!-- STANDARD -->
+      <div class="modalidade-card fade-up">
+        <div class="modalidade-card__top mod--standard">STANDARD</div>
+        <div class="modalidade-card__body">
+          <span class="mod-pill">STANDARD</span>
+          <h3 class="mod-title">Tours Standard</h3>
+          <ul class="feat-list">
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Veículos compartilhados (até 28 pessoas)</li>
+            <li class="feat-item"><span class="feat-icon feat-no">✗</span> Horários não podem ser modificados</li>
+            <li class="feat-item"><span class="feat-icon feat-no">✗</span> Paradas não podem ser modificadas</li>
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Preço mais acessível</li>
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Portfólio completo disponível em modalidade Standard</li>
+          </ul>
+        </div>
+      </div>
+      <!-- PRIVATIVO -->
+      <div class="modalidade-card modalidade-card--destaque fade-up">
+        <div class="modalidade-card__top mod--privativo">PRIVATIVO ⭐</div>
+        <div class="modalidade-card__body">
+          <span class="mod-pill mod-pill--red">PRIVATIVO</span>
+          <h3 class="mod-title">Tours Privativos</h3>
+          <ul class="feat-list">
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Veículos particulares, apenas para seu grupo</li>
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Horários podem ser modificados (dentro do horário do tour)</li>
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Paradas podem ser ajustadas (parcialmente, o roteiro é pré-programado)</li>
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Experiência completamente personalizada</li>
+            <li class="feat-item"><span class="feat-icon feat-ok">✓</span> Fale com a gente para saber mais, informações e valores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ COMO FUNCIONA ═══════════════════════════════════════════════════ -->
+<section class="como">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Simples assim</span>
+      <h2 class="section-title">Como funciona</h2>
+    </div>
+    <div class="como__track">
+      <div class="como__plane">🚐</div>
+
+      <div class="como__step">
+        <p class="como__num">Passo 01</p>
+        <div class="como__badge">🗺️</div>
+        <h3 class="como__title">Escolhe o passeio</h3>
+        <p class="como__desc">Navega pelos passeios, vê o preço em reais, duração e o que tá incluído. Sem surpresa.</p>
+      </div>
+
+      <div class="como__step">
+        <p class="como__num">Passo 02</p>
+        <div class="como__badge">💬</div>
+        <h3 class="como__title">Reserva em 10 min</h3>
+        <p class="como__desc">Fala com a gente pelo WhatsApp. Confirmação imediata com tudo por escrito.</p>
+      </div>
+
+      <div class="como__step">
+        <p class="como__num">Passo 03</p>
+        <div class="como__badge">🎒</div>
+        <h3 class="como__title">Embarque sem estresse</h3>
+        <p class="como__desc">Seu guia te busca no hotel. Você só precisa aparecer e curtir cada momento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ PAYMENT STRIP ══════════════════════════════════════════════════ -->
+<section class="payment-strip">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:48px">
+      <span class="section-eyebrow">Pagamento facilitado</span>
+      <h2 class="section-title">Pague do Brasil,<br>sem complicação</h2>
+    </div>
+    <div class="payment-strip__inner">
+      <div class="payment-item">
+        <div class="payment-item__icon">🏦</div>
+        <div><strong>PIX</strong>Transferência instantânea</div>
+      </div>
+      <div class="payment-item">
+        <div class="payment-item__icon">💳</div>
+        <div><strong>12× no cartão</strong>Sem juros</div>
+      </div>
+      <div class="payment-item">
+        <div class="payment-item__icon">🌐</div>
+        <div><strong>Wise</strong>Para pagamentos internacionais</div>
+      </div>
+      <div class="payment-item">
+        <div class="payment-item__icon">🔒</div>
+        <div><strong>Pagamento seguro</strong>CNPJ verificado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DEPOIMENTOS ═════════════════════════════════════════════════════ -->
+<section class="depoimentos">
+  <div class="depoimentos__stamps"></div>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">O que dizem nossos viajantes</span>
+      <h2 class="section-title on-dark">Mais de 1.200<br>avaliações ⭐⭐⭐⭐⭐</h2>
+    </div>
+    <div class="depoimentos__grid">
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/citytour-wlc/600/500'); min-height:320px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#DB3A3D;">M</div>
+            <div>
+              <p class="depo__name">Mariana S.</p>
+              <p class="depo__origin">São Paulo, SP</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">O guia falava português perfeito e conhecia cada cantinho. Deu dicas de restaurante que não achei em nenhum blog. Valeu cada centavo.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/geisers-tatio/600/750'); min-height:460px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#1B2A5E;">C</div>
+            <div>
+              <p class="depo__name">Carlos M.</p>
+              <p class="depo__origin">Belo Horizonte, MG</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">Fiz 4 passeios em 5 dias no Atacama. Geisers, Valle de la Luna, flamingos… minha viagem mais inesquecível. Já estou planejando voltar para Torres del Paine.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/vinicola-wlc/600/380'); min-height:240px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#A5D6D1; color:#1B1A2A;">F</div>
+            <div>
+              <p class="depo__name">Fernanda L.</p>
+              <p class="depo__origin">Curitiba, PR</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">Reserva pelo WhatsApp rapidíssima, paguei via PIX e recebi tudo por escrito. Recomendo sem hesitar.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/andes-wlc/600/500'); min-height:320px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#DB3A3D;">A</div>
+            <div>
+              <p class="depo__name">Ana P.</p>
+              <p class="depo__origin">Florianópolis, SC</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">Fui com marido e filha de 8 anos. A equipe ajustou o ritmo e ainda trouxe lanchinho surpresa. Melhor passeio de família que já fiz.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/valle-luna-atac/600/420'); min-height:260px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#1B2A5E;">R</div>
+            <div>
+              <p class="depo__name">Rafael T.</p>
+              <p class="depo__origin">Rio de Janeiro, RJ</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">O tour de vinhos foi incrível. Aprendi sobre terroir e harmonização. Guia apaixonado pelo tema!</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/lagoas-flamingos/600/680'); min-height:420px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#F5B71C; color:#1B1A2A;">B</div>
+            <div>
+              <p class="depo__name">Beatriz R.</p>
+              <p class="depo__origin">Recife, PE</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">Cheguei sozinha ao Chile sem falar espanhol. A We Love Chile me deu toda a segurança. Grupo pequeno, cuidado imenso. Voltei transformada.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/luademel-stgo/600/400'); min-height:260px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#A5D6D1; color:#1B1A2A;">L</div>
+            <div>
+              <p class="depo__name">Leonardo & Ju</p>
+              <p class="depo__origin">Goiânia, GO</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">Lua de mel perfeita. Jantar surpresa com vista para a cordilheira e hotel boutique indicado pelo guia. Inesquecível.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/valpo-morros/600/560'); min-height:360px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#1B2A5E;">C</div>
+            <div>
+              <p class="depo__name">Camila F.</p>
+              <p class="depo__origin">Porto Alegre, RS</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">Valparaíso com guia local é outra experiência. Subimos os morros, tomamos café em galeria de arte. Voltei com os olhos diferentes.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-wrap">
+        <div class="depo-card fade-up" style="background-image:url('https://picsum.photos/seed/grupo-amigas/600/440'); min-height:280px;">
+          <div class="depo-card__header">
+            <div class="depo__avatar" style="background:#F5B71C; color:#1B1A2A;">P</div>
+            <div>
+              <p class="depo__name">Patrícia N.</p>
+              <p class="depo__origin">Brasília, DF</p>
+            </div>
+          </div>
+          <div class="depo-card__body">
+            <p class="depo__text">Grupo de 12 amigas, tudo organizado sem estresse. O guia sabia restaurantes que cabiam no orçamento sem abrir mão da experiência.</p>
+            <p class="depo__stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="depoimentos__cta">
+      <a href="#" class="depoimentos__google">⭐ Ver todas as avaliações no Google →</a>
+    </div>
+  </div>
+</section>
+<!-- ═══ FAQ ═════════════════════════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Perguntas frequentes</span>
+      <h2 class="section-title">Tire suas dúvidas</h2>
+      <p class="section-subtitle">Se a resposta não tiver aqui, fala com a gente no WhatsApp — respondemos em minutos.</p>
+    </div>
+    <div class="faq__grid">
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          O passeio sai com qualquer quantidade de pessoas?
+          <span class="faq__chevron"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#1B1A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq__answer">Sim! Atendemos casais, famílias e grupos. Passeios privados saem com apenas 2 pessoas. Grupos grandes recebem desconto especial — consulte no WhatsApp.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          Posso pagar em reais? Como funciona?
+          <span class="faq__chevron"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#1B1A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq__answer">Sim! Aceitamos PIX, transferência Wise e cartão em até 12×. Os preços já estão em BRL — você paga aqui do Brasil antes da viagem, sem estresse lá.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          O guia fala português fluente?
+          <span class="faq__chevron"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#1B1A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq__answer">Com certeza! Todos os nossos guias são brasileiros ou fluentes em português brasileiro. Sem "portuñol" aqui — você vai entender cada história contada.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          O passeio sai em caso de mau tempo?
+          <span class="faq__chevron"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#1B1A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq__answer">Depende do passeio. Santiago tem clima estável. No Atacama, cancelamentos são raros. Em caso de tempo extremo, reagendamos sem custo ou devolvemos o valor integral.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          O transporte está incluído no preço?
+          <span class="faq__chevron"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#1B1A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq__answer">Sim! O pickup no hotel e o translado estão incluídos em todos os nossos tours. Você só precisa aparecer na hora combinada.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          Com quanto de antecedência preciso reservar?
+          <span class="faq__chevron"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#1B1A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq__answer">Recomendamos pelo menos 48h, especialmente na alta temporada (dezembro–fevereiro e julho). Passeios populares lotam rápido — quanto antes, melhor garantido.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ SOBRE ════════════════════════════════════════════════════════════ -->
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="sobre__inner">
+      <div>
+        <span class="section-eyebrow">Quem somos</span>
+        <h2 class="section-title">Brasileiros<br>apaixonados pelo Chile</h2>
+        <p class="section-subtitle on-dark">A We Love Chile nasceu da vontade de mostrar o Chile do jeito certo para os brasileiros — com toda informação que você precisa, no idioma certo, a preço justo.</p>
+        <div class="sobre__stats">
+          <div>
+            <p class="sobre__stat-val">15k+</p>
+            <p class="sobre__stat-label">Brasileiros atendidos</p>
+          </div>
+          <div>
+            <p class="sobre__stat-val">9+</p>
+            <p class="sobre__stat-label">Anos de operação</p>
+          </div>
+          <div>
+            <p class="sobre__stat-val">4,9★</p>
+            <p class="sobre__stat-label">Google Avaliações</p>
+          </div>
+          <div>
+            <p class="sobre__stat-val">30+</p>
+            <p class="sobre__stat-label">Passeios disponíveis</p>
+          </div>
+        </div>
+      </div>
+      <div class="sobre__guias">
+        <h3 class="sobre__guias-title">Nossos guias</h3>
+        <div class="guia-card">
+          <div class="guia-card__avatar"><img src="https://picsum.photos/seed/guia-laise/100/100" alt="Laise" /></div>
+          <div>
+            <p class="guia-card__name">Laise — Fundadora</p>
+            <p class="guia-card__role">Especialista em Santiago e Atacama · +9 anos</p>
+            <div class="guia-card__langs"><span class="guia-card__lang">🇧🇷 Português</span><span class="guia-card__lang">🇨🇱 Espanhol</span></div>
+          </div>
+        </div>
+        <div class="guia-card">
+          <div class="guia-card__avatar"><img src="https://picsum.photos/seed/guia-ric/100/100" alt="Ricardo" /></div>
+          <div>
+            <p class="guia-card__name">Ricardo — Guia Sênior</p>
+            <p class="guia-card__role">Especialista em Deserto do Atacama · +5 anos</p>
+            <div class="guia-card__langs"><span class="guia-card__lang">🇧🇷 Português</span><span class="guia-card__lang">🇬🇧 English</span></div>
+          </div>
+        </div>
+        <div class="guia-card">
+          <div class="guia-card__avatar"><img src="https://picsum.photos/seed/guia-ana/100/100" alt="Ana Paula" /></div>
+          <div>
+            <p class="guia-card__name">Ana Paula — Guia</p>
+            <p class="guia-card__role">Especialista em Vinícolas e Gastronomia · +3 anos</p>
+            <div class="guia-card__langs"><span class="guia-card__lang">🇧🇷 Português</span><span class="guia-card__lang">🇨🇱 Espanhol</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ CERTS ════════════════════════════════════════════════════════════ -->
+<div class="certs">
+  <div class="container">
+    <div class="certs__inner">
+      <div class="cert-item"><div class="cert-item__icon">🏛️</div><div><strong>SERNATUR</strong><span>Registro Oficial Chile</span></div></div>
+      <div class="cert-item"><div class="cert-item__icon">🇧🇷</div><div><strong>CNPJ Ativo</strong><span>Empresa brasileira</span></div></div>
+      <div class="cert-item"><div class="cert-item__icon">🏆</div><div><strong>TripAdvisor</strong><span>Certificate of Excellence</span></div></div>
+      <div class="cert-item"><div class="cert-item__icon">🔒</div><div><strong>Site Seguro</strong><span>SSL + pagamentos</span></div></div>
+      <div class="cert-item"><div class="cert-item__icon">⭐</div><div><strong>4,9 / 5</strong><span>Google Reviews</span></div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══ CTA FINAL ═══════════════════════════════════════════════════════ -->
+<section class="cta-final">
+  <div class="cta-final__stamps"></div>
+  <div class="container">
+    <span class="section-eyebrow">Não deixa pra amanhã</span>
+    <h2 class="section-title">Garanta sua experiência<br>no Chile</h2>
+    <p class="section-subtitle">Passeios lotam rápido na alta temporada. Reserve agora com quem mais entende de turismo para brasileiros.</p>
+    <div class="cta-final__actions">
+      <a href="#passeios" class="btn-red">Ver todos os passeios →</a>
+      <a href="https://wa.me/5511999999999" class="btn-dark">📱 Falar no WhatsApp agora</a>
+    </div>
+  </div>
+</section>
+<!-- ═══ FOOTER ══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-logo"><span>We Love Chile</span></div>
+        <p>Passeios no Chile para brasileiros desde 2016. Santiago e Deserto do Atacama com guias que falam português e preços em reais.</p>
+        <div class="footer__socials" style="margin-top:20px">
+          <a href="#" class="footer__social" aria-label="Instagram">📸</a>
+          <a href="#" class="footer__social" aria-label="YouTube">▶</a>
+          <a href="#" class="footer__social" aria-label="TikTok">♪</a>
+          <a href="#" class="footer__social" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Passeios</p>
+        <ul class="footer__links">
+          <li><a href="#">City Tour Santiago</a></li>
+          <li><a href="#">Tour Vinícola</a></li>
+          <li><a href="#">Andes & Neve</a></li>
+          <li><a href="#">Geisers do Tatio</a></li>
+          <li><a href="#">Valle de la Luna</a></li>
+          <li><a href="#">Lagoas Altiplânicas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Destinos</p>
+        <ul class="footer__links">
+          <li><a href="#">Santiago</a></li>
+          <li><a href="#">Deserto do Atacama</a></li>
+          <li><a href="#">Valle do Maipo</a></li>
+          <li><a href="#">Cordilheira dos Andes</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Empresa</p>
+        <ul class="footer__links">
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Avaliações</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Cancelamento</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 We Love Chile. Todos os direitos reservados. CNPJ 00.000.000/0001-00</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos</a>
+        <a href="#">Cancelamento</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ── HERO PARALLAX + CATEGORY TABS ── */
+  (function() {
+    var heroSection = document.getElementById('home');
+    var heroScene   = document.getElementById('heroScene');
+    if (!heroSection || !heroScene) return;
+
+    var CAT_DATA = {
+      santiago:  { title: 'Santiago',   sub: 'A vibrante capital do Chile. Gastronomia, cultura, Cerro San Cristóbal e muito mais.' },
+      atacama:   { title: 'Atacama',    sub: 'O deserto mais árido do mundo. Gêisers, salares, Valle da Lua e estrelas inesquecíveis.' },
+      andes:     { title: 'Andes',      sub: 'Cordilheira dos Andes, Portillo, Laguna del Inca e picos nevados de tirar o fôlego.' },
+      vinicolas: { title: 'Vinícolas',  sub: 'Os melhores vinhedos do Chile com degustações no Vale do Maipo e Colchagua.' },
+      neve:      { title: 'Neve',       sub: 'Valle Nevado, Farellones e Portillo. Esquie, brinque na neve e crie memórias únicas.' }
+    };
+
+    window.switchCat = function(id) {
+      document.querySelectorAll('.hero__layer').forEach(function(l) { l.classList.remove('active'); });
+      var layer = document.querySelector('.hero__layer[data-cat="' + id + '"]');
+      if (layer) layer.classList.add('active');
+      document.querySelectorAll('.hero__tab').forEach(function(t) { t.classList.remove('active'); });
+      var tab = document.querySelector('.hero__tab[data-cat="' + id + '"]');
+      if (tab) tab.classList.add('active');
+    };
+
+    heroSection.addEventListener('mousemove', function(e) {
+      var r = heroSection.getBoundingClientRect();
+      var x = ((e.clientX - r.left) / r.width  - 0.5) * -4.5;
+      var y = ((e.clientY - r.top)  / r.height - 0.5) * -3;
+      heroScene.style.transition = 'transform .12s cubic-bezier(.25,.46,.45,.94)';
+      heroScene.style.transform  = 'translate(' + x + '%, ' + y + '%)';
+    });
+
+    heroSection.addEventListener('mouseleave', function() {
+      heroScene.style.transition = 'transform .9s cubic-bezier(.25,.46,.45,.94)';
+      heroScene.style.transform  = 'translate(0%, 0%)';
+    });
+  })();
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq__item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Tab switch
+  function switchTab(panelId, btn) {
+    document.querySelectorAll('.passeios__panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.passeios__tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(panelId).classList.add('active');
+    btn.classList.add('active');
+    document.querySelectorAll('#' + panelId + ' .fade-up').forEach((el, i) => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 100);
+    });
+  }
+
+  // 3D Tilt + Parallax — destinos
+  document.querySelectorAll('.destino-card-3d').forEach(card => {
+    const bg = card.querySelector('.destino-card__bg');
+    const RETURN = '1s cubic-bezier(0.445, 0.05, 0.55, 0.95)';
+
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('active');
+      card.style.transition = `transform ${RETURN}, box-shadow ${RETURN}`;
+      bg.style.transition = `transform ${RETURN}`;
+      card.style.transform = '';
+      bg.style.transform = '';
+    });
+
+    card.addEventListener('mousemove', e => {
+      card.style.transition = 'box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+      bg.style.transition = 'none';
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top)  / rect.height - 0.5;
+      card.style.transform = `rotateY(${px * 30}deg) rotateX(${py * -30}deg) scale(1.06)`;
+      bg.style.transform   = `translateX(${px * -40}px) translateY(${py * -40}px)`;
+    });
+  });
+
+    // Payment strip — entrada escalonada
+  const payObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.payment-item').forEach(el => payObs.observe(el));
+
+  // Como funciona — entrada escalonada
+  const comoObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.como__step').forEach(el => comoObs.observe(el));
+
+  // Scroll animations — .fade-up elements
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Masonry depoimentos — Web Animations API (sem race condition)
+  (function() {
+    var wraps = document.querySelectorAll('.depo-wrap');
+    var depoObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var col = Array.from(wraps).indexOf(el) % 3;
+        el.animate(
+          [
+            { opacity: 0, transform: 'translateY(20px)' },
+            { opacity: 1, transform: 'translateY(0)'   }
+          ],
+          { duration: 500, delay: col * 120, easing: 'ease-out', fill: 'forwards' }
+        );
+        depoObs.unobserve(el);
+      });
+    }, { threshold: 0.15 });
+    wraps.forEach(function(el) { depoObs.observe(el); });
+  })();
+</script>
+
+<!-- ── MESSAGE DOCK ─────────────────────────────────────────────── -->
+<style>
+  .mdock {
+    position: fixed;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-72px);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
+  }
+  .mdock.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .mdock__pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 8px 32px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
+    background: #ffffff;
+    transition: height .35s cubic-bezier(.34,1.2,.64,1),
+                background .2s ease;
+    position: relative;
+    overflow: visible;
+    white-space: nowrap;
+  }
+
+  /* Sparkle button */
+  .mdock__sparkle {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: opacity .2s, transform .2s;
+    flex-shrink: 0;
+  }
+  .mdock__sparkle:hover { transform: scale(1.05) translateX(4px); }
+
+  /* Separators */
+  .mdock__sep {
+    width: 24px; height: 1px;
+    background: #d1d5db;
+    flex-shrink: 0;
+    transition: opacity .2s, transform .2s;
+  }
+
+  /* Character buttons */
+  .mdock__char {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    position: relative;
+    transition: opacity .25s, transform .25s;
+    cursor: pointer;
+  }
+  .mdock__char:hover { transform: scale(1.12) translateX(6px); }
+  .mdock__char.char--chile  { background: #f87171; }
+  .mdock__char.char--desert { background: #f5c842; }
+
+  /* Online dot */
+  .mdock__online {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2px solid #fff;
+    transition: opacity .2s, transform .2s;
+  }
+
+  /* Menu button */
+  .mdock__menu {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: opacity .2s, transform .2s;
+  }
+  .mdock__menu:hover { transform: scale(1.05) translateX(4px); }
+  .mdock__menu svg { color: #4b5563; }
+
+  /* ── Expanded state ─── */
+  .mdock__pill.is-expanded {
+    gap: 0;
+  }
+
+  /* Selected character — absolute positioned inside pill */
+  .mdock__selected-char {
+    display: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.9);
+    align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform .2s;
+    margin-right: 8px;
+  }
+  .mdock__selected-char:hover { transform: scale(1.05); }
+
+  /* Input */
+  .mdock__input-wrap {
+    display: none;
+    flex: 1;
+    min-width: 0;
+    margin: 0 8px;
+    animation: mdock-input-in .25s .2s ease both;
+  }
+  @keyframes mdock-input-in {
+    from { opacity:0; transform: translateX(12px); }
+    to   { opacity:1; transform: translateX(0); }
+  }
+  .mdock__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Lufga', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+  }
+  .mdock__input::placeholder { color: #6b7280; }
+
+  /* Send button */
+  .mdock__send {
+    display: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.9);
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: transform .15s, opacity .15s;
+    animation: mdock-send-in .3s .25s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes mdock-send-in {
+    from { opacity:0; transform: scale(0) rotate(-90deg); }
+    to   { opacity:1; transform: scale(1) rotate(0deg); }
+  }
+  .mdock__send:hover { transform: scale(1.1); }
+  .mdock__send:disabled { opacity: .4; }
+  .mdock__send svg { color: #4b5563; }
+
+  /* Hide/show logic when expanded */
+  .mdock__pill.is-expanded .mdock__sparkle,
+  .mdock__pill.is-expanded .mdock__sep,
+  .mdock__pill.is-expanded .mdock__menu {
+    display: none;
+  }
+  .mdock__pill.is-expanded .mdock__char:not(.char--active) {
+    opacity: 0;
+    transform: translateX(-40px) scale(.8);
+    pointer-events: none;
+    height: 0;
+    width: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  .mdock__pill.is-expanded .mdock__char.char--active {
+    display: none; /* replaced by selected-char */
+  }
+  .mdock__pill.is-expanded .mdock__selected-char { display: flex; }
+  .mdock__pill.is-expanded .mdock__input-wrap    { display: flex; align-items: center; }
+  .mdock__pill.is-expanded .mdock__send          { display: flex; }
+</style>
+
+<div class="mdock" id="messageDock">
+  <div class="mdock__pill" id="mdockPill">
+    <!-- Sparkle -->
+    <button class="mdock__sparkle" aria-label="Sparkle">✨</button>
+    <!-- Sep -->
+    <div class="mdock__sep"></div>
+    <!-- Characters -->
+    <button class="mdock__char char--chile" data-idx="0" data-gradient="#d52b1e, #fff0ee" aria-label="Message Chile">
+      🇨🇱
+      <span class="mdock__online"></span>
+    </button>
+    <button class="mdock__char char--desert" data-idx="1" data-gradient="#f5c842, #fffbea" aria-label="Message Deserto">
+      🏜️
+      <span class="mdock__online"></span>
+    </button>
+    <!-- Sep -->
+    <div class="mdock__sep"></div>
+    <!-- Menu -->
+    <button class="mdock__menu" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <!-- Selected character (shown when expanded) -->
+    <button class="mdock__selected-char" id="mdockSelected" aria-label="Close"></button>
+    <!-- Input -->
+    <div class="mdock__input-wrap">
+      <input class="mdock__input" id="mdockInput" type="text" placeholder="Mensagem...">
+    </div>
+    <!-- Send -->
+    <button class="mdock__send" id="mdockSend" disabled aria-label="Enviar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m22 2-7 20-4-9-9-4z"/>
+        <path d="M22 2 11 13"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function () {
+  const pill     = document.getElementById('mdockPill');
+  const selected = document.getElementById('mdockSelected');
+  const input    = document.getElementById('mdockInput');
+  const sendBtn  = document.getElementById('mdockSend');
+  const chars    = Array.from(document.querySelectorAll('.mdock__char'));
+
+  let activeIdx = null;
+
+  function expand(idx) {
+    const btn = chars[idx];
+    const gradient = btn.dataset.gradient;
+    const emoji    = btn.textContent.trim();
+    const name     = btn.getAttribute('aria-label').replace('Message ', '');
+
+    btn.classList.add('char--active');
+    selected.textContent = emoji;
+    pill.style.background = `linear-gradient(to right, ${gradient})`;
+    pill.classList.add('is-expanded');
+    input.placeholder = `Mensagem ${name}...`;
+    input.focus();
+    activeIdx = idx;
+  }
+
+  function collapse() {
+    if (activeIdx !== null) chars[activeIdx].classList.remove('char--active');
+    pill.classList.remove('is-expanded');
+    pill.style.background = '';
+    input.value = '';
+    sendBtn.disabled = true;
+    activeIdx = null;
+  }
+
+  function send() {
+    const msg = input.value.trim();
+    if (!msg || activeIdx === null) return;
+    console.log('[MessageDock] send:', msg, 'character index:', activeIdx);
+    collapse();
+  }
+
+  chars.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      if (activeIdx === idx) { collapse(); return; }
+      if (activeIdx !== null) chars[activeIdx].classList.remove('char--active');
+      expand(idx);
+    });
+  });
+
+  selected.addEventListener('click', collapse);
+
+  input.addEventListener('input', () => {
+    sendBtn.disabled = !input.value.trim();
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') send();
+    if (e.key === 'Escape') collapse();
+  });
+
+  sendBtn.addEventListener('click', send);
+
+  document.addEventListener('mousedown', e => {
+    if (!document.getElementById('messageDock').contains(e.target)) collapse();
+  });
+
+  // Aparece só depois que o hero de vídeo sai da tela
+  const dockEl = document.getElementById('messageDock');
+  const heroEl = document.getElementById('home');
+  if (heroEl && dockEl) {
+    const heroObs = new IntersectionObserver(function(entries) {
+      const heroVisible = entries[0].isIntersecting;
+      dockEl.classList.toggle('is-visible', !heroVisible);
+    }, { threshold: 0.05 });
+    heroObs.observe(heroEl);
+  }
+})();
+</script>
+</body>
+</html>

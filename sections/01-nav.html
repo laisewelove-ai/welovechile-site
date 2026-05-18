@@ -1,0 +1,33 @@
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-text">We Love Chile</span>
+      </a>
+      <div class="nav__links">
+        <a href="#passeios">Passeios</a>
+        <a href="#santiago">Santiago</a>
+        <a href="#atacama">Atacama</a>
+        <a href="#sobre">A gente</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/5511999999999" class="nav__cta">Reservar →</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobileMenu">
+  <button class="nav__mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#passeios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Passeios</a>
+  <a href="#santiago" onclick="document.getElementById('mobileMenu').classList.remove('open')">Santiago</a>
+  <a href="#atacama" onclick="document.getElementById('mobileMenu').classList.remove('open')">Atacama</a>
+  <a href="#sobre" onclick="document.getElementById('mobileMenu').classList.remove('open')">A gente</a>
+  <a href="#faq" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+  <a href="https://wa.me/5511999999999" class="btn-yellow" style="font-size:16px;padding:14px 32px;margin-top:8px">Reservar →</a>
+</div>

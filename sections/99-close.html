@@ -1,2 +1,165 @@
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ── HERO PARALLAX + CATEGORY TABS ── */
+  (function() {
+    var heroSection = document.getElementById('home');
+    var heroScene   = document.getElementById('heroScene');
+    if (!heroSection || !heroScene) return;
+
+    var CAT_DATA = {
+      santiago:  { title: 'Santiago',   sub: 'A vibrante capital do Chile. Gastronomia, cultura, Cerro San Cristóbal e muito mais.' },
+      atacama:   { title: 'Atacama',    sub: 'O deserto mais árido do mundo. Gêisers, salares, Valle da Lua e estrelas inesquecíveis.' },
+      andes:     { title: 'Andes',      sub: 'Cordilheira dos Andes, Portillo, Laguna del Inca e picos nevados de tirar o fôlego.' },
+      vinicolas: { title: 'Vinícolas',  sub: 'Os melhores vinhedos do Chile com degustações no Vale do Maipo e Colchagua.' },
+      neve:      { title: 'Neve',       sub: 'Valle Nevado, Farellones e Portillo. Esquie, brinque na neve e crie memórias únicas.' }
+    };
+
+    window.switchCat = function(id) {
+      document.querySelectorAll('.hero__layer').forEach(function(l) { l.classList.remove('active'); });
+      var layer = document.querySelector('.hero__layer[data-cat="' + id + '"]');
+      if (layer) layer.classList.add('active');
+      document.querySelectorAll('.hero__tab').forEach(function(t) { t.classList.remove('active'); });
+      var tab = document.querySelector('.hero__tab[data-cat="' + id + '"]');
+      if (tab) tab.classList.add('active');
+    };
+
+    heroSection.addEventListener('mousemove', function(e) {
+      var r = heroSection.getBoundingClientRect();
+      var x = ((e.clientX - r.left) / r.width  - 0.5) * -4.5;
+      var y = ((e.clientY - r.top)  / r.height - 0.5) * -3;
+      heroScene.style.transition = 'transform .12s cubic-bezier(.25,.46,.45,.94)';
+      heroScene.style.transform  = 'translate(' + x + '%, ' + y + '%)';
+    });
+
+    heroSection.addEventListener('mouseleave', function() {
+      heroScene.style.transition = 'transform .9s cubic-bezier(.25,.46,.45,.94)';
+      heroScene.style.transform  = 'translate(0%, 0%)';
+    });
+  })();
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq__item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Tab switch
+  function switchTab(panelId, btn) {
+    document.querySelectorAll('.passeios__panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.passeios__tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(panelId).classList.add('active');
+    btn.classList.add('active');
+    document.querySelectorAll('#' + panelId + ' .fade-up').forEach((el, i) => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 100);
+    });
+  }
+
+  function switchPasseioTab(dest, btn) {
+    document.querySelectorAll('.passeios__panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + dest).classList.add('active');
+    document.querySelectorAll('#passeiosTabs .passeios__tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    var firstSub = document.querySelector('#panel-' + dest + ' .passeios__subtab');
+    if (firstSub) firstSub.click();
+  }
+
+  function switchSubFilter(panelId, sub, btn) {
+    var panel = document.getElementById(panelId);
+    panel.querySelectorAll('.passeios__subtab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    panel.querySelectorAll('.tour-card').forEach(function(card) {
+      card.style.display = card.dataset.sub === sub ? '' : 'none';
+    });
+  }
+
+  // 3D Tilt + Parallax — destinos
+  document.querySelectorAll('.destino-card-3d').forEach(card => {
+    const bg = card.querySelector('.destino-card__bg');
+    const RETURN = '1s cubic-bezier(0.445, 0.05, 0.55, 0.95)';
+
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('active');
+      card.style.transition = `transform ${RETURN}, box-shadow ${RETURN}`;
+      bg.style.transition = `transform ${RETURN}`;
+      card.style.transform = '';
+      bg.style.transform = '';
+    });
+
+    card.addEventListener('mousemove', e => {
+      card.style.transition = 'box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+      bg.style.transition = 'none';
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top)  / rect.height - 0.5;
+      card.style.transform = `rotateY(${px * 30}deg) rotateX(${py * -30}deg) scale(1.06)`;
+      bg.style.transform   = `translateX(${px * -40}px) translateY(${py * -40}px)`;
+    });
+  });
+
+    // Payment strip — entrada escalonada
+  const payObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.payment-item').forEach(el => payObs.observe(el));
+
+  // Como funciona — entrada escalonada
+  const comoObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.como__step').forEach(el => comoObs.observe(el));
+
+  // Scroll animations — .fade-up elements (exceto depo-card, tratados abaixo)
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up:not(.depo-card)').forEach(el => observer.observe(el));
+
+  // Depoimentos — observer dedicado sem rootMargin (layout colunas)
+  const depoObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        depoObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0 });
+  document.querySelectorAll('.depo-card.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+    depoObs.observe(el);
+  });
+
+  // Masonry depoimentos — Web Animations API (sem race condition)
+  (function() {
+    var wraps = document.querySelectorAll('.depo-wrap');
+    var depoObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var col = Array.from(wraps).indexOf(el) % 3;
+        el.animate(
+          [
+            { opacity: 0, transform: 'translateY(20px)' },
+            { opacity: 1, transform: 'translateY(0)'   }
+          ],
+          { duration: 500, delay: col * 120, easing: 'ease-out', fill: 'forwards' }
+        );
+        depoObs.unobserve(el);
+      });
+    }, { threshold: 0.15 });
+    wraps.forEach(function(el) { depoObs.observe(el); });
+  })();
+</script>
 </body>
 </html>

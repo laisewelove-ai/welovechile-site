@@ -2,213 +2,36 @@
 <section class="passeios" id="passeios">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">O que fazer</span>
-      <h2 class="section-title">Escolha seu passeio</h2>
-      <p class="section-subtitle">Todos com guia em português, preço em BRL e reserva em menos de 10 minutos.</p>
-    </div>
-    <div class="passeios__tabs">
-      <button class="passeios__tab active" onclick="switchTab('santiago-tab', this)">📍 Santiago</button>
-      <button class="passeios__tab" onclick="switchTab('atacama-tab', this)">🌵 Atacama</button>
-      <button class="passeios__tab" onclick="switchTab('cordilheira-tab', this)">⛰️ Cordilheira</button>
-      <button class="passeios__tab" onclick="switchTab('vinicolas-tab', this)">🍷 Vinícolas</button>
+      <span class="section-eyebrow">Passeios</span>
+      <h2 class="section-title">O que você vai fazer no Chile?</h2>
+      <p class="section-subtitle">Cada passeio é conduzido por guias brasileiros — você nunca vai se sentir perdido.</p>
     </div>
 
-    <!-- SANTIAGO -->
-    <div class="passeios__panel active" id="santiago-tab">
-      <div class="passeios__grid">
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/santiago-lovers/city-tour.webp" alt="City Tour Santiago a Pé" loading="lazy" />
-            <span class="tour-card__badge">Mais vendido</span>
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🚶 A pé</span><span>🗓️ Todo dia</span></div>
-            <h3 class="tour-card__title">City Tour Santiago a Pé</h3>
-            <p class="tour-card__desc">Plaza de Armas, Cerro Santa Lucía, La Moneda e os bairros mais charmosos de Santiago com histórias reais em português.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/santiago-lovers/city-tour" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-            <p class="tour-card__urgency">Últimas vagas esta semana</p>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/litoral-lovers/valparaiso-vina-del-mar.webp" alt="Valparaíso e Viña del Mar" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🌊 Litoral</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Valparaíso & Viña del Mar</h3>
-            <p class="tour-card__desc">O porto boêmio de street art e a cidade jardim do Pacífico no mesmo dia. Dois destinos imperdíveis saindo de Santiago.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/litoral-lovers/valparaiso-vina-del-mar" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/santiago-lovers/amor-e-pasta.webp" alt="Amor e Pasta jantar Santiago" loading="lazy" />
-            <span class="tour-card__badge destaque">Favorito</span>
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🍝 Gastronômico</span><span>🗓️ Noturno</span></div>
-            <h3 class="tour-card__title">Amor e Pasta</h3>
-            <p class="tour-card__desc">Jantar italiano no coração de Santiago com as melhores massas artesanais da cidade. Uma noite para não esquecer.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/santiago-lovers/amor-e-pasta" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/litoral-lovers/isla-negra-algarrobo.webp" alt="Isla Negra Algarrobo e Undurraga" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🌊 Litoral</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Isla Negra, Algarrobo & Undurraga</h3>
-            <p class="tour-card__desc">A casa de Pablo Neruda à beira-mar, a praia de Algarrobo e degustação na vinícola Undurraga — um trio inesquecível.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/litoral-lovers/isla-negra-algarrobo" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/adventure-lovers/rafting.webp" alt="Rafting no Chile" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🌊 Aventura</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Rafting</h3>
-            <p class="tour-card__desc">Descida de corredeiras nos rios gelados que descem dos Andes com instrutores certificados. Adrenalina de verdade.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/adventure-lovers/rafting" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/adventure-lovers/parque-safari.webp" alt="Parque Safari Chile" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🦁 Safari</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Parque Safari</h3>
-            <p class="tour-card__desc">O único safari da América do Sul com leões, girafas e zebras soltos no savana chileno. Inacreditável que existe isso aqui!</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/adventure-lovers/parque-safari" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
+    <!-- TABS principais -->
+    <div class="passeios__tabs" id="passeiosTabs">
+      <button class="passeios__tab active" onclick="switchPasseioTab('santiago', this)">📍 Santiago</button>
+      <button class="passeios__tab" onclick="switchPasseioTab('atacama', this)">🌵 Atacama</button>
+    </div>
+
+    <!-- ── PAINEL SANTIAGO ─────────────────────────────── -->
+    <div class="passeios__panel active" id="panel-santiago">
+      <div class="passeios__subtabs">
+        <button class="passeios__subtab active" onclick="switchSubFilter('panel-santiago','cordilheira',this)">⛰️ Cordilheira</button>
+        <button class="passeios__subtab" onclick="switchSubFilter('panel-santiago','vinicola',this)">🍷 Vinícola</button>
+        <button class="passeios__subtab" onclick="switchSubFilter('panel-santiago','litoral',this)">🌊 Litoral</button>
+        <button class="passeios__subtab" onclick="switchSubFilter('panel-santiago','cidade',this)">🏙️ Cidade</button>
+        <button class="passeios__subtab" onclick="switchSubFilter('panel-santiago','adventure',this)">🏄 Adventure</button>
       </div>
-    </div>
-
-    <!-- ATACAMA -->
-    <div class="passeios__panel" id="atacama-tab">
       <div class="passeios__grid">
-        <div class="tour-card fade-up">
+
+        <!-- CORDILHEIRA -->
+        <div class="tour-card fade-up" data-sub="cordilheira">
           <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/atacama/half-day/geysers-fundo.webp" alt="Geysers del Tatio" loading="lazy" />
+            <img src="assets/passeios/stg/cord-farellones.jpg" alt="Farellones neve Cordilheira" loading="lazy" />
             <span class="tour-card__badge">Mais vendido</span>
           </div>
           <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Madrugada</span><span>🌋 Geisers</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Geysers del Tatio</h3>
-            <p class="tour-card__desc">80+ geisers expelindo vapor a 86°C ao nascer do sol, a 4.200m de altitude. Um dos espetáculos mais surreais da natureza.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/atacama/half-day/geysers" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-            <p class="tour-card__urgency">Últimas vagas</p>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/atacama/half-day/valle-de-la-luna-fundo.webp" alt="Valle de la Luna pôr do sol" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🌅 Pôr do sol</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Valle de la Luna</h3>
-            <p class="tour-card__desc">Paisagem de outro planeta ao entardecer. Dunas, formações de sal e o céu cor de laranja fazem deste passeio puro cinema.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/atacama/half-day/valle-de-la-luna" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/atacama/half-day/laguna-cejar-fundo.webp" alt="Laguna Cejar banho flutuante" loading="lazy" />
-            <span class="tour-card__badge destaque">Favorito</span>
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🏊 Banho</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Laguna Cejar</h3>
-            <p class="tour-card__desc">Lagoa de sal no deserto onde você flutua sem fazer esforço — mais salgada que o Mar Morto. Experiência única no mundo.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/atacama/half-day/laguna-cejar" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/atacama/half-day/vallecito-fundo.webp" alt="Vallecito Magic Bus" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🚌 Ônibus mágico</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Vallecito Magic Bus</h3>
-            <p class="tour-card__desc">O ônibus que sobe sozinho morro abaixo — ilusão de ótica do Atacama que vai deixar toda a família de boca aberta.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/atacama/half-day/vallecito" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/atacama/full-day/piedras-rojas-fundo.webp" alt="Piedras Rojas altitude" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Full Day</span><span>⛰️ 4.000m</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Piedras Rojas</h3>
-            <p class="tour-card__desc">Rochas vermelhas refletidas em lagoas de um azul impossível a 4.000m de altitude. A foto mais linda que você vai tirar na vida.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/atacama/full-day/piedras-rojas" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/atacama/full-day/rota-dos-salares-fundo.webp" alt="Rota dos Salares altiplano" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Full Day</span><span>🏔️ 4.800m</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Rota dos Salares</h3>
-            <p class="tour-card__desc">O altiplano mais isolado do Chile com salares brancos, flamingos e paisagens que parecem outro planeta — a 4.800m de altitude.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/atacama/full-day/rota-dos-salares" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CORDILHEIRA -->
-    <div class="passeios__panel" id="cordilheira-tab">
-      <div class="passeios__grid">
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/farellones.webp" alt="Farellones neve Cordilheira" loading="lazy" />
-            <span class="tour-card__badge">Mais vendido</span>
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 10 horas</span><span>❄️ 2.500m</span><span>🗓️ Jun–Set</span></div>
+            <div class="tour-card__meta"><span>🕐 10h</span><span>❄️ 2.500m</span><span>🗓️ Jun–Set</span></div>
             <h3 class="tour-card__title">Farellones & Neve</h3>
             <p class="tour-card__desc">Ver neve de perto a 2.500m com vista para Santiago lá embaixo. O passeio favorito das famílias brasileiras no inverno chileno.</p>
             <div class="tour-card__footer">
@@ -218,9 +41,10 @@
             <p class="tour-card__urgency">Alta demanda em julho</p>
           </div>
         </div>
-        <div class="tour-card fade-up">
+
+        <div class="tour-card fade-up" data-sub="cordilheira">
           <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/valle-nevado.webp" alt="Valle Nevado maior resort América do Sul" loading="lazy" />
+            <img src="assets/passeios/stg/cord-valle-nevado.jpg" alt="Valle Nevado maior resort América do Sul" loading="lazy" />
           </div>
           <div class="tour-card__body">
             <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>⛷️ Resort</span><span>🗓️ Jun–Set</span></div>
@@ -232,9 +56,10 @@
             </div>
           </div>
         </div>
-        <div class="tour-card fade-up">
+
+        <div class="tour-card fade-up" data-sub="cordilheira">
           <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/el-colorado.webp" alt="El Colorado 3333m" loading="lazy" />
+            <img src="assets/passeios/stg/cord-el-colorado.jpg" alt="El Colorado 3333m" loading="lazy" />
           </div>
           <div class="tour-card__body">
             <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🏔️ 3.333m</span><span>🗓️ Jun–Set</span></div>
@@ -246,9 +71,10 @@
             </div>
           </div>
         </div>
-        <div class="tour-card fade-up">
+
+        <div class="tour-card fade-up" data-sub="cordilheira">
           <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/portillo.webp" alt="Portillo ski resort exclusivo" loading="lazy" />
+            <img src="assets/passeios/stg/cord-portillo.jpg" alt="Portillo ski resort exclusivo" loading="lazy" />
             <span class="tour-card__badge destaque">Exclusivo</span>
           </div>
           <div class="tour-card__body">
@@ -261,47 +87,15 @@
             </div>
           </div>
         </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/termas-summer.webp" alt="Termas Cordilheira verão" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>♨️ Verão</span><span>🗓️ Out–Mar</span></div>
-            <h3 class="tour-card__title">Termas de Verão</h3>
-            <p class="tour-card__desc">Piscinas termais naturais no meio da Cordilheira sem neve — a Cordilheira no verão é outro mundo, verde e quente.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/termas-summer" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/cordilheira-lovers/valle-experience.webp" alt="Valle Experience Cordilheira" loading="lazy" />
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🏔️ Andino</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Valle Experience</h3>
-            <p class="tour-card__desc">Trilha guiada pelos vales andinos com parada para almoço típico e tirolesa sobre o Rio Maipo. Natureza pura.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/cordilheira-lovers/valle-experience" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- VINÍCOLAS -->
-    <div class="passeios__panel" id="vinicolas-tab">
-      <div class="passeios__grid">
-        <div class="tour-card fade-up">
+        <!-- VINÍCOLA -->
+        <div class="tour-card fade-up" data-sub="vinicola" style="display:none">
           <div class="tour-card__img">
             <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/cata-sensorial.webp" alt="Cata Sensorial vinhos chilenos" loading="lazy" />
             <span class="tour-card__badge">Mais vendido</span>
           </div>
           <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🍷 Cata</span><span>🗓️ Diário</span></div>
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🍷 Cata guiada</span><span>🗓️ Diário</span></div>
             <h3 class="tour-card__title">Cata Sensorial</h3>
             <p class="tour-card__desc">Aprenda a degustar vinhos chilenos com sommelier brasileiro. Do Carménère ao Syrah — uma aula deliciosa sobre a alma do Chile.</p>
             <div class="tour-card__footer">
@@ -310,9 +104,10 @@
             </div>
           </div>
         </div>
-        <div class="tour-card fade-up">
+
+        <div class="tour-card fade-up" data-sub="vinicola" style="display:none">
           <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/concha-toro-normal.webp" alt="Concha e Toro vinícola Santiago" loading="lazy" />
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/concha-toro-normal.webp" alt="Concha e Toro vinícola" loading="lazy" />
           </div>
           <div class="tour-card__body">
             <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🏰 Concha & Toro</span><span>🗓️ Diário</span></div>
@@ -324,36 +119,24 @@
             </div>
           </div>
         </div>
-        <div class="tour-card fade-up">
-          <div class="tour-card__img">
-            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/concha-toro-marques.webp" alt="Concha e Toro Marquês de Casa Concha" loading="lazy" />
-            <span class="tour-card__badge destaque">Premium</span>
-          </div>
-          <div class="tour-card__body">
-            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🥂 Premium</span><span>🗓️ Diário</span></div>
-            <h3 class="tour-card__title">Concha & Toro Marquês</h3>
-            <p class="tour-card__desc">Tour exclusivo com degustação da linha Marquês de Casa Concha — os vinhos que representam o Chile no mundo todo.</p>
-            <div class="tour-card__footer">
-              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
-              <a href="https://www.welovechile.com.br/santiago/wine-lovers/concha-toro-marques" target="_blank" class="tour-card__btn">Ver passeio</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-card fade-up">
+
+        <div class="tour-card fade-up" data-sub="vinicola" style="display:none">
           <div class="tour-card__img">
             <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/concha-toro-noturno.webp" alt="Concha e Toro tour noturno" loading="lazy" />
+            <span class="tour-card__badge destaque">Romântico</span>
           </div>
           <div class="tour-card__body">
             <div class="tour-card__meta"><span>🕐 Noturno</span><span>🌙 Caves iluminadas</span><span>🗓️ Qui e Sex</span></div>
             <h3 class="tour-card__title">Concha & Toro Noturno</h3>
-            <p class="tour-card__desc">Caves iluminadas com velas, vinhos exclusivos e a magia da vinícola à noite. O passeio romântico favorito dos casais.</p>
+            <p class="tour-card__desc">Caves iluminadas com velas, vinhos exclusivos e a magia da vinícola à noite. O passeio favorito dos casais.</p>
             <div class="tour-card__footer">
               <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
               <a href="https://www.welovechile.com.br/santiago/wine-lovers/concha-toro-noturno" target="_blank" class="tour-card__btn">Ver passeio</a>
             </div>
           </div>
         </div>
-        <div class="tour-card fade-up">
+
+        <div class="tour-card fade-up" data-sub="vinicola" style="display:none">
           <div class="tour-card__img">
             <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/cousino-macul.webp" alt="Cousiño Macul vinícola histórica" loading="lazy" />
           </div>
@@ -367,7 +150,8 @@
             </div>
           </div>
         </div>
-        <div class="tour-card fade-up">
+
+        <div class="tour-card fade-up" data-sub="vinicola" style="display:none">
           <div class="tour-card__img">
             <img src="https://www.welovechile.com.br/assets/thumbs/santiago/wine-lovers/santa-rita.webp" alt="Santa Rita vinícola e museu" loading="lazy" />
           </div>
@@ -381,8 +165,294 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-  </div>
+        <!-- LITORAL -->
+        <div class="tour-card fade-up" data-sub="litoral" style="display:none">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/litoral-lovers/valparaiso-vina-del-mar.webp" alt="Valparaíso e Viña del Mar" loading="lazy" />
+            <span class="tour-card__badge">Mais vendido</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🌊 Litoral</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Valparaíso & Viña del Mar</h3>
+            <p class="tour-card__desc">O porto boêmio de street art e a cidade jardim do Pacífico no mesmo dia. Dois destinos imperdíveis saindo de Santiago.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/litoral-lovers/valparaiso-vina-del-mar" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="litoral" style="display:none">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/litoral-lovers/isla-negra-algarrobo.webp" alt="Isla Negra Algarrobo e Undurraga" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>📚 Neruda + Vinho</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Isla Negra, Algarrobo & Undurraga</h3>
+            <p class="tour-card__desc">A casa de Pablo Neruda à beira-mar, a praia de Algarrobo e degustação na vinícola Undurraga — um trio inesquecível.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/litoral-lovers/isla-negra-algarrobo" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CIDADE -->
+        <div class="tour-card fade-up" data-sub="cidade" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/stg/cidade-city-tour.jpg" alt="City Tour Santiago a Pé" loading="lazy" />
+            <span class="tour-card__badge">Mais vendido</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🚶 A pé</span><span>🗓️ Todo dia</span></div>
+            <h3 class="tour-card__title">City Tour Santiago a Pé</h3>
+            <p class="tour-card__desc">Plaza de Armas, Cerro Santa Lucía, La Moneda e os bairros mais charmosos de Santiago com histórias reais em português.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/santiago-lovers/city-tour" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+            <p class="tour-card__urgency">Últimas vagas esta semana</p>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="cidade" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/stg/cidade-noturno-1.jpg" alt="Amor e Pasta jantar Santiago" loading="lazy" />
+            <span class="tour-card__badge destaque">Favorito</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🍝 Gastronômico</span><span>🗓️ Noturno</span></div>
+            <h3 class="tour-card__title">Amor e Pasta</h3>
+            <p class="tour-card__desc">Jantar italiano no coração de Santiago com as melhores massas artesanais da cidade. Uma noite para não esquecer.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/santiago-lovers/amor-e-pasta" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADVENTURE -->
+        <div class="tour-card fade-up" data-sub="adventure" style="display:none">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/adventure-lovers/rafting.webp" alt="Rafting no Chile" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Meio dia</span><span>🌊 Corredeiras</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Rafting</h3>
+            <p class="tour-card__desc">Descida de corredeiras nos rios gelados que descem dos Andes com instrutores certificados. Adrenalina de verdade.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/adventure-lovers/rafting" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="adventure" style="display:none">
+          <div class="tour-card__img">
+            <img src="https://www.welovechile.com.br/assets/thumbs/santiago/adventure-lovers/parque-safari.webp" alt="Parque Safari Chile" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Dia inteiro</span><span>🦁 Safari</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Parque Safari</h3>
+            <p class="tour-card__desc">O único safari da América do Sul com leões, girafas e zebras soltos no savana chileno. Inacreditável que existe isso aqui!</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/santiago/adventure-lovers/parque-safari" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.passeios__grid -->
+    </div><!-- /#panel-santiago -->
+
+    <!-- ── PAINEL ATACAMA ─────────────────────────────── -->
+    <div class="passeios__panel" id="panel-atacama">
+      <div class="passeios__subtabs">
+        <button class="passeios__subtab active" onclick="switchSubFilter('panel-atacama','halfday',this)">🌅 Half Day</button>
+        <button class="passeios__subtab" onclick="switchSubFilter('panel-atacama','fullday',this)">☀️ Full Day</button>
+        <button class="passeios__subtab" onclick="switchSubFilter('panel-atacama','noturnos',this)">🌙 Noturnos</button>
+      </div>
+      <div class="passeios__grid">
+
+        <!-- HALF DAY -->
+        <div class="tour-card fade-up" data-sub="halfday">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/half-geysers.jpg" alt="Geysers del Tatio ao nascer do sol" loading="lazy" />
+            <span class="tour-card__badge">Mais vendido</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Madrugada</span><span>🌋 4.200m</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Geysers del Tatio</h3>
+            <p class="tour-card__desc">80+ geisers expelindo vapor a 86°C ao nascer do sol. Um dos espetáculos mais surreais da natureza — a 4.200m de altitude.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/geysers" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+            <p class="tour-card__urgency">Últimas vagas</p>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="halfday">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/half-valle-luna.jpg" alt="Valle de la Luna pôr do sol" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Tarde</span><span>🌅 Pôr do sol</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Valle de la Luna</h3>
+            <p class="tour-card__desc">Paisagem de outro planeta ao entardecer. Dunas, formações de sal e o céu cor de laranja — puro cinema.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/valle-de-la-luna" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="halfday">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/half-laguna-cejar.jpg" alt="Laguna Cejar banho flutuante" loading="lazy" />
+            <span class="tour-card__badge destaque">Favorito</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🏊 Banho flutuante</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Laguna Cejar</h3>
+            <p class="tour-card__desc">Lagoa de sal onde você flutua sem esforço — mais salgada que o Mar Morto. Experiência única no mundo.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/laguna-cejar" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="halfday">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/half-vallecito.jpg" alt="Vallecito Magic Bus ilusão de ótica" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 4 horas</span><span>🚌 Ilusão de ótica</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Vallecito Magic Bus</h3>
+            <p class="tour-card__desc">O ônibus que sobe sozinho morro abaixo — a ilusão de ótica mais famosa do Atacama. Vai deixar toda a família de boca aberta.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/half-day/vallecito" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FULL DAY -->
+        <div class="tour-card fade-up" data-sub="fullday" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/full-piedras-rojas.jpg" alt="Piedras Rojas altitude 4000m" loading="lazy" />
+            <span class="tour-card__badge">Espetacular</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Full Day</span><span>⛰️ 4.000m</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Piedras Rojas</h3>
+            <p class="tour-card__desc">Rochas vermelhas refletidas em lagoas de um azul impossível a 4.000m de altitude. A foto mais linda que você vai tirar na vida.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/full-day/piedras-rojas" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="fullday" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/full-rota-salares.jpg" alt="Rota dos Salares altiplano 4800m" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Full Day</span><span>🏔️ 4.800m</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Rota dos Salares</h3>
+            <p class="tour-card__desc">O altiplano mais isolado do Chile com salares brancos, flamingos e paisagens que parecem outro planeta — a 4.800m.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/full-day/rota-dos-salares" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="fullday" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/full-salar-tara.jpg" alt="Salar de Tara Atacama" loading="lazy" />
+            <span class="tour-card__badge destaque">Selvagem</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Full Day</span><span>🦩 Flamingos</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Salar de Tara</h3>
+            <p class="tour-card__desc">Um dos salares mais remotos e impressionantes do deserto. Flamingos rosados, monólitos de pedra e o silêncio absoluto do altiplano.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/full-day/salar-de-tara" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="fullday" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/full-miniques.jpg" alt="Laguna Miñiques e Miscanti" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Full Day</span><span>💧 Lagunas</span><span>🗓️ Seg/Qua/Sex</span></div>
+            <h3 class="tour-card__title">Lagunas Miñiques & Miscanti</h3>
+            <p class="tour-card__desc">Duas lagunas altiplânicas de cores impossíveis cercadas de vulcões nevados. Flamingos, vicunhas e paisagem de tirar o fôlego.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/full-day/laguna-miniques" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTURNOS -->
+        <div class="tour-card fade-up" data-sub="noturnos" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/not-via-lactea.jpg" alt="Via Láctea Atacama céu estrelado" loading="lazy" />
+            <span class="tour-card__badge">Inesquecível</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Noturno</span><span>🔭 Observatório</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Tour Astronômico</h3>
+            <p class="tour-card__desc">O céu mais estrelado do planeta com telescópios profissionais e astrônomos guias. A Via Láctea com as próprias mãos.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/noturnos/tour-astronomico" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+            <p class="tour-card__urgency">Lotado nos fins de semana</p>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="noturnos" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/not-deserto-noite.jpg" alt="Deserto do Atacama à noite" loading="lazy" />
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Noturno</span><span>🌙 Deserto</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Noite no Deserto</h3>
+            <p class="tour-card__desc">Jantar ao ar livre com o céu do Atacama como teto. Fogo de chão, vinhos chilenos e o silêncio absoluto do maior deserto do mundo.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/noturnos/noite-no-deserto" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card fade-up" data-sub="noturnos" style="display:none">
+          <div class="tour-card__img">
+            <img src="assets/passeios/atc/not-por-sol.jpg" alt="Pôr do sol Atacama Death Valley" loading="lazy" />
+            <span class="tour-card__badge destaque">Fotográfico</span>
+          </div>
+          <div class="tour-card__body">
+            <div class="tour-card__meta"><span>🕐 Fim de tarde</span><span>🌇 Death Valley</span><span>🗓️ Diário</span></div>
+            <h3 class="tour-card__title">Pôr do Sol Death Valley</h3>
+            <p class="tour-card__desc">O pôr do sol mais bonito do Atacama pintando o deserto de laranja e vermelho do alto de uma formação de areia. Cinema puro.</p>
+            <div class="tour-card__footer">
+              <div><p class="tour-card__price-from">Consulte</p><p class="tour-card__price-val">valores</p></div>
+              <a href="https://www.welovechile.com.br/atacama/noturnos/por-do-sol-death-valley" target="_blank" class="tour-card__btn">Ver passeio</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.passeios__grid -->
+    </div><!-- /#panel-atacama -->
+
+  </div><!-- /.container -->
 </section>
